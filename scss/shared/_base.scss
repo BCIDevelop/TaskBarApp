@@ -1,6 +1,6 @@
 @use './variables';
 body {
-    font-family: var(--font-family);
+    font-family: variables.$font-family;
     margin: 0;
     padding: 0;
 }

@@ -1,4 +1,19 @@
 
-:root {
-    
-}
+    /* Font styles */
+    $font-family: "Poppins", system-ui;
+    $fs-base: 16px;
+    $fs-large:24px;
+    $fs-small:10px;
+    /* Colors */
+    $clr-primary:'#FF8142';
+    $clr-warm-pink:'#F26680';
+    $clr-soft-blue:'#7789F2';
+    $clr-cyan:'#38BDF2';
+    $clr-mint-green:'#91D99C';
+    $clr-orange:'#F2A03D';
+    /* Spacings */
+    $gap-row-tags: 4px;
+    $gap-col-login:19px;
+    $gap-col-cards:12px;
+    /* Margins */
+    $margin-primary:33px;

@@ -1,7 +1,11 @@
+/* Font styles */
+/* Colors */
+/* Spacings */
+/* Margins */
 /* Tablet - 768px */
 /* Small Desktop - 1024px */
 body {
-  font-family: var(--font-family);
+  font-family: "Poppins", system-ui;
   margin: 0;
   padding: 0;
 }
