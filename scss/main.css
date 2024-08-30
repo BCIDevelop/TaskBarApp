@@ -48,4 +48,80 @@ body {
   font-size: 40px;
   font-weight: bold;
   color: #FFFFFF;
+}
+
+.button__createtask:hover {
+  background-color: #91D99C;
+}
+
+/* Font styles */
+/* Colors */
+/* Texto Colors */
+/* Spacings */
+/* Margins */
+.menu {
+  width: 334px;
+  height: 725px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #BEC0C7;
+  border-radius: 24px;
+  font-family: "Poppins", system-ui;
+}
+
+.user {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.user__picture {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto;
+}
+
+.user__name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.user__description {
+  font-size: 16px;
+  color: #BEC0C7;
+}
+
+.menu__options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu__icon {
+  max-height: 24px;
+  max-width: 24px;
+}
+
+.menu__option {
+  width: 314px;
+  height: 56px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.menu__option:hover {
+  background-color: #BEC0C7;
+}
+
+.menu__option a {
+  text-decoration: none;
+  color: #090F24;
+  font-size: 16px;
+  font-weight: bold;
 }/*# sourceMappingURL=main.css.map */
