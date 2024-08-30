@@ -1,0 +1,22 @@
+$size-screen:(
+    table: 48rem,
+    desktop:64rem
+);
+
+/* Tablet - 768px */
+@mixin tablet {
+    @media only screen and (min-width: map-get($size-screen, table)) {
+        @content
+        
+    
+    }
+    
+};
+
+/* Small Desktop - 1024px */
+@mixin desktop{
+    @media only screen and (min-width: map-get($size-screen, desktop)) {
+        @content
+    }
+}
+

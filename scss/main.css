@@ -1,0 +1,13 @@
+/* Tablet - 768px */
+/* Small Desktop - 1024px */
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}/*# sourceMappingURL=main.css.map */
