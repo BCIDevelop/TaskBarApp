@@ -3,10 +3,13 @@ body {
     font-family: variables.$font-family;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
+    min-height: 100vh;
 }
-
+html {
+    overflow-x: hidden;
+}
 *,
 *::before,
 *::after {

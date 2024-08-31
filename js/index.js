@@ -14,3 +14,13 @@ function showOrderBy() {
     document.querySelector(".orderby-container").classList.toggle("visible");
     document.querySelector(".filters-container").classList.remove("visible");
 }
+function showCreateTask() {
+    document
+        .getElementById("create-task-overlay")
+        .classList.add("overlay-show");
+}
+function closeCreateTask() {
+    document
+        .getElementById("create-task-overlay")
+        .classList.remove("overlay-show");
+}

@@ -8,8 +8,8 @@
     border: 1px solid;
     @include user-card-dimensions(408px);
 }
-.user-card,
-.main-user-card {
+
+.user-card {
     width: 100%;
     height: 60px;
     display: flex;
@@ -75,4 +75,34 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
+}
+.main-user-card {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px;
+    align-items: center;
+    position: relative;
+    gap: 2rem;
+
+    & .user-card__profile {
+        width: auto;
+    }
+    & .user-card-profile__name {
+        display: flex;
+
+        flex-direction: column;
+    }
+    &__icon {
+        cursor: pointer;
+        color: gray;
+        transition: all 0.5s ease-in-out;
+        &:hover {
+            color: black;
+        }
+    }
+    &-profile__image {
+        height: 50px;
+        border-radius: 50%;
+    }
 }

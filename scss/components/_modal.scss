@@ -6,9 +6,10 @@
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px v.$modal-shadow-color;
-    width: 350px;
+    max-width: 450px;
+    width: 90%;
     position: relative;
-
+    margin: 20px auto;
     .close_modal {
         position: absolute;
         top: 10px;
