@@ -637,6 +637,7 @@ body {
 .overlay-show {
   opacity: 100%;
   display: block;
+}
 
 .user-lists {
   list-style: none;
