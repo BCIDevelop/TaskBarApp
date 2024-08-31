@@ -39,8 +39,8 @@
                     <p class="user__description">Cargo del usuario</p>
                 </div>
                 <ul class="menu__options">
-                    <li class="menu__option">
-                        <a href="#">
+                    <li class="menu__option abled">
+                        <a href="./home.html">
                             <img
                                 src="../scss\assets\image\house-solid.svg"
                                 class="menu__icon"
@@ -48,7 +48,7 @@
                             Principal</a
                         >
                     </li>
-                    <li class="menu__option">
+                    <li class="menu__option menu__option--disabled">
                         <a href="#">
                             <img
                                 src="../scss\assets\image\file-regular.svg"
@@ -57,16 +57,16 @@
                             Categorías</a
                         >
                     </li>
-                    <li class="menu__option">
-                        <a href="#">
+                    <li class="menu__option abled">
+                        <a href="./tasks.html">
                             <img
-                                src="../scss/assets/image/comments-regular.svg"
+                                src="../scss\assets\image\list-check-solid.svg"
                                 class="menu__icon"
                             />
-                            Estados</a
+                            Tareas</a
                         >
                     </li>
-                    <li class="menu__option">
+                    <li class="menu__option menu__option--disabled">
                         <a href="#">
                             <img
                                 src="../scss/assets/image/user-regular.svg"
@@ -77,104 +77,7 @@
                     </li>
                 </ul>
             </aside>
-
-            <section class="calendar__container">
-                <div class="calendar__day calendar__day--active">
-                    <span class="calendar__day-name">DOM</span>
-                    <span class="calendar__day-number">15</span>
-                </div>
-                <div class="calendar__day">
-                    <span class="calendar__day-name">LUN</span>
-                    <span class="calendar__day-number">16</span>
-                </div>
-                <div class="calendar__day">
-                    <span class="calendar__day-name">MAR</span>
-                    <span class="calendar__day-number">17</span>
-                </div>
-                <div class="calendar__day">
-                    <span class="calendar__day-name">MIER</span>
-                    <span class="calendar__day-number">18</span>
-                </div>
-                <div class="calendar__day">
-                    <span class="calendar__day-name">JUEV</span>
-                    <span class="calendar__day-number">19</span>
-                </div>
-            </section>
-
-            <div class="cards__container">
-                <div class="cards__container-heading">
-                    <h2>Tareas</h2>
-                    <div class="buttons__container">
-                        <button class="button__show">
-                            <i class="fa-solid fa-filter"></i>
-                        </button>
-                        <button class="button__show">
-                            <i class="fa-solid fa-arrow-down-z-a"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="card card__personal">
-                    <div class="card__tags">
-                        <div class="card__tag card__tag-pending">Pendiente</div>
-                    </div>
-                    <div class="card__body">
-                        <div class="card__details">
-                            <p class="card__date">Lunes,12 de Junio 2025</p>
-                            <h2 class="card__title">Prueba de Titulo</h2>
-                        </div>
-                        <div class="card__buttons">
-                            <button class="button__task button__task-edit">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button class="button__task button__task-delete">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card card__others">
-                    <div class="card__tags">
-                        <div class="card__tag card__tag-inprogress">
-                            En Progreso
-                        </div>
-                    </div>
-                    <div class="card__body">
-                        <div class="card__details">
-                            <p class="card__date">Lunes,12 de Junio 2025</p>
-                            <h2 class="card__title">Prueba de Titulo</h2>
-                        </div>
-                        <div class="card__buttons">
-                            <button class="button__task button__task-edit">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button class="button__task button__task-delete">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card card__college">
-                    <div class="card__tags">
-                        <div class="card__tag card__tag-complete">
-                            Completado
-                        </div>
-                    </div>
-                    <div class="card__body">
-                        <div class="card__details">
-                            <p class="card__date">Lunes,12 de Junio 2025</p>
-                            <h2 class="card__title">Prueba de Titulo</h2>
-                        </div>
-                        <div class="card__buttons">
-                            <button class="button__task button__task-edit">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button class="button__task button__task-delete">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </main>
         <script
             src="https://kit.fontawesome.com/b556484ff9.js"

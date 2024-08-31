@@ -6,3 +6,11 @@ function closeNavBar() {
     document.getElementById("nav-overlay").classList.remove("overlay-show");
     document.getElementById("navbar").classList.remove("menu-show");
 }
+function showFilter() {
+    document.querySelector(".filters-container").classList.toggle("visible");
+    document.querySelector(".orderby-container").classList.remove("visible");
+}
+function showOrderBy() {
+    document.querySelector(".orderby-container").classList.toggle("visible");
+    document.querySelector(".filters-container").classList.remove("visible");
+}
