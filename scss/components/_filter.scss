@@ -1,0 +1,51 @@
+.filter,
+.order {
+    position: relative;
+}
+
+.filters-container,
+.orderby-container {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    z-index: 7;
+    right: -15px;
+    .filter-category,
+    .order-category {
+        margin-bottom: 15px;
+        .filter-title,
+        .order-title {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .filter-content,
+        .order-content {
+            display: none;
+            padding-left: 10px;
+
+            &.show {
+                display: block;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 10px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+.visible {
+    display: block;
+}

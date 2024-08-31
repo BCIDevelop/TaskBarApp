@@ -3,7 +3,7 @@
 .calendar__container{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     padding: 10px;
     background-color: #f5f5f5;
     gap: variables.$gap-col-calendar-day    

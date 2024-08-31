@@ -4,19 +4,19 @@
     width: 334px;
     height: 100vh;
     background-color: $text-clr-light;
-    padding:  30px 20px;
+    padding: 30px 20px;
     box-sizing: border-box;
     border: 1px solid $text-clr-dark;
-    border-radius:  24px 0 0 24px;
+    border-radius: 24px 0 0 24px;
     font-family: $font-family;
     position: absolute;
     //display: none;
     top: 0;
     right: -334px;
     z-index: 5;
-    transition: all .5s ease-out;
+    transition: all 0.5s ease-out;
 }
-.menu-show{
+.menu-show {
     right: -0px;
 }
 .user {
@@ -55,14 +55,20 @@
 }
 
 .menu__option {
-    background-color: $text-clr-light;
     border-bottom: 1px solid #ddd;
+    &--disabled {
+        background-color: $text-clr-dark;
+        opacity: 0.5;
+        & a {
+            cursor: default;
+        }
+    }
 }
 .menu__option a {
     display: flex;
     width: 100%;
     gap: 10px;
-    padding:15px;
+    padding: 15px;
 }
 .menu__option:hover {
     background-color: $text-clr-dark;
