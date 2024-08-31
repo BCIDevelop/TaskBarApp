@@ -1,11 +1,81 @@
+@charset "UTF-8";
 /* Font styles */
 /* Colors */
 /* Texto Colors */
 /* Spacings */
 /* Margins */
 /* Alerts */
-/* Tablet - 768px */
-/* Small Desktop - 1024px */
+/* Paddings */
+/* Tamaños */
+/* Gaps */
+/* Fuentes y Bordes */
+/* Sombra y Colores */
+/* HOVER */
+.cards__container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+.card {
+  border-top: 4px solid;
+  border-radius: 6px;
+  padding: 15px 20px;
+  box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.19);
+}
+.card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 8px;
+}
+.card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card__title {
+  margin: 0;
+}
+.card__tag {
+  font-size: 14px;
+  padding: 4px 10px;
+  display: inline-block;
+  border-radius: 5px;
+}
+.card__tag-pending {
+  background-color: rgba(249, 126, 110, 0.5764705882);
+  color: #f03f28;
+}
+.card__tag-inprogress {
+  background-color: rgba(242, 161, 61, 0.4509803922);
+  color: #cc6627;
+}
+.card__tag-complete {
+  background-color: rgba(56, 189, 242, 0.4745098039);
+  color: #08a0f7;
+}
+.card__date {
+  margin: 0;
+  color: #ccc;
+  font-weight: 500;
+}
+.card__personal {
+  border-color: #40a35e;
+}
+.card__college {
+  border-color: #f26680;
+}
+.card__others {
+  border-color: #7789f2;
+}
+.card__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 body {
   font-family: "Poppins", system-ui;
   margin: 0;
@@ -18,6 +88,41 @@ body {
   box-sizing: border-box;
 }
 
+.button__task {
+  all: unset;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  font-size: 20px;
+  color: #acacac;
+}
+.button__task-edit:hover {
+  color: #2e9424;
+  border-color: #2e9424;
+}
+.button__task-delete:hover {
+  color: #b84040;
+  border-color: #b84040;
+}
+.button__task-add {
+  border: 2px dotted #acacac;
+  border-radius: 50%;
+  font-size: 15px;
+  height: 20px;
+  width: 20px;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button__task-add:hover {
+  color: #4e4e4e;
+  border-color: #4e4e4e;
+}
+.button__task-close:hover {
+  color: #b84040;
+  border-color: #b84040;
+}
+
 .button--active {
   opacity: 1;
 }
@@ -27,8 +132,8 @@ body {
 }
 
 .button__category--warm-pink {
-  background-color: #F26680;
-  color: #FFFFFF;
+  background-color: #f26680;
+  color: #ffffff;
   padding: 0.7rem 1.4rem;
   font-size: 14px;
   font-family: "Poppins", system-ui;
@@ -43,8 +148,8 @@ body {
   background-color: #ec1f45;
 }
 .button__category--soft-blue {
-  background-color: #7789F2;
-  color: #FFFFFF;
+  background-color: #7789f2;
+  color: #ffffff;
   padding: 0.7rem 1.4rem;
   font-size: 14px;
   font-family: "Poppins", system-ui;
@@ -59,8 +164,8 @@ body {
   background-color: #314ceb;
 }
 .button__category--cyan {
-  background-color: #38BDF2;
-  color: #FFFFFF;
+  background-color: #38bdf2;
+  color: #ffffff;
   padding: 0.7rem 1.4rem;
   font-size: 14px;
   font-family: "Poppins", system-ui;
@@ -75,8 +180,8 @@ body {
   background-color: #0e99d0;
 }
 .button__category--mint-green {
-  background-color: #91D99C;
-  color: #FFFFFF;
+  background-color: #91d99c;
+  color: #ffffff;
   padding: 0.7rem 1.4rem;
   font-size: 14px;
   font-family: "Poppins", system-ui;
@@ -91,8 +196,8 @@ body {
   background-color: #58c569;
 }
 .button__category--orange {
-  background-color: #F2A03D;
-  color: #FFFFFF;
+  background-color: #f2a03d;
+  color: #ffffff;
   padding: 0.7rem 1.4rem;
   font-size: 14px;
   font-family: "Poppins", system-ui;
@@ -109,7 +214,7 @@ body {
 
 .button__status--completed {
   background-color: #0521D8;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 0.7rem 1.4rem;
   font-size: 14px;
   font-family: "Poppins", system-ui;
@@ -124,8 +229,8 @@ body {
   background-color: #03168d;
 }
 .button__status--pending {
-  background-color: #F26680;
-  color: #FFFFFF;
+  background-color: #f26680;
+  color: #ffffff;
   padding: 0.7rem 1.4rem;
   font-size: 14px;
   font-family: "Poppins", system-ui;
@@ -140,8 +245,8 @@ body {
   background-color: #ec1f45;
 }
 .button__status--in-progress {
-  background-color: #F2A03D;
-  color: #FFFFFF;
+  background-color: #f2a03d;
+  color: #ffffff;
   padding: 0.7rem 1.4rem;
   font-size: 14px;
   font-family: "Poppins", system-ui;
@@ -154,6 +259,38 @@ body {
 }
 .button__status--in-progress:hover {
   background-color: #d47b0e;
+}
+
+.button__login {
+  width: 325px;
+  height: 58px;
+  background-color: #ff8142;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.button__login:hover {
+  background-color: #91d99c;
+}
+
+.button__createtask {
+  width: 58px;
+  height: 58px;
+  background-color: #ff8142;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.button__createtask:hover {
+  background-color: #91d99c;
 }
 
 .alert--error {
@@ -171,7 +308,7 @@ body {
 .alert--error .alert__icon {
   background-color: #F85640;
   border-radius: 50%;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -204,7 +341,7 @@ body {
 .alert--warning .alert__icon {
   background-color: #FBA63C;
   border-radius: 50%;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,7 +374,7 @@ body {
 .alert--success .alert__icon {
   background-color: #34A770;
   border-radius: 50%;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,7 +407,7 @@ body {
 .alert--info .alert__icon {
   background-color: #08A0F7;
   border-radius: 50%;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,15 +442,15 @@ body {
   justify-content: center;
   width: 3.75rem;
   height: 5.3rem;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 50px;
-  color: #BEC0C7;
+  color: #bec0c7;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
 .calendar__day--active {
-  background-color: #F2A03D;
-  color: #FFFFFF;
+  background-color: #f2a03d;
+  color: #ffffff;
 }
 .calendar__day-name {
   font-size: 14px;
@@ -323,43 +460,8 @@ body {
   font-weight: bold;
 }
 .calendar__day:hover {
-  background-color: #F2A03D;
-  color: #FFFFFF;
-/* Font styles */
-/* Colors */
-/* Texto Colors */
-/* Spacings */
-/* Margins */
-.button__login {
-  width: 325px;
-  height: 58px;
-  background-color: #FF8142;
-  border-radius: 24px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  color: #FFFFFF;
-}
-
-.button__login:hover {
-  background-color: #91D99C;
-}
-
-.button__createtask {
-  width: 58px;
-  height: 58px;
-  background-color: #FF8142;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  font-size: 40px;
-  font-weight: bold;
-  color: #FFFFFF;
-}
-
-.button__createtask:hover {
-  background-color: #91D99C;
+  background-color: #f2a03d;
+  color: #ffffff;
 }
 
 /* Font styles */
@@ -367,12 +469,20 @@ body {
 /* Texto Colors */
 /* Spacings */
 /* Margins */
+/* Alerts */
+/* Paddings */
+/* Tamaños */
+/* Gaps */
+/* Fuentes y Bordes */
+/* Sombra y Colores */
+/* HOVER */
 .menu {
   width: 334px;
   height: 725px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 20px;
   box-sizing: border-box;
+  border: 1px solid #bec0c7;
   border-radius: 24px;
   font-family: "Poppins", system-ui;
 }
@@ -399,7 +509,7 @@ body {
 
 .user__description {
   font-size: 16px;
-  color: #BEC0C7;
+  color: #bec0c7;
 }
 
 .menu__options {
@@ -416,19 +526,19 @@ body {
 .menu__option {
   width: 314px;
   height: 56px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-bottom: 1px solid #ddd;
   padding: 10px;
   box-sizing: border-box;
 }
 
 .menu__option:hover {
-  background-color: #BEC0C7;
+  background-color: #bec0c7;
 }
 
 .menu__option a {
   text-decoration: none;
-  color: #090F24;
+  color: #090f24;
   font-size: 16px;
   font-weight: bold;
 }/*# sourceMappingURL=main.css.map */

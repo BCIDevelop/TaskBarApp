@@ -1,54 +1,31 @@
 @use "../shared/variables" as variables;
 @use "../shared/mixin" as m;
+
 .button__task {
-    @include m.button-task-styles();
-    &-edit {
-        @include m.button-hover(variables.$hover-edit-color);
-    }
-    &-delete {
-        @include m.button-hover(variables.$hover-delete-color);
-    }
-    &-add {
-        border: 2px dotted #ACACAC;
-        border-radius: 50%;
-        font-size: 15px;
-        height: 20px;
-        width: 20px;
-        padding: 2px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @include m.button-hover(variables.$hover-add-color);
-    }
-    &-close{
-        @include m.button-hover(variables.$hover-delete-color);
-    }
-@mixin button($options) {
-  $bg-color: map-get($options, "bg-color");
-  $text-color: map-get($options, "text-color");
-  $padding: map-get($options, "padding");
-  $font-size: map-get($options, "font-size");
-  $border: map-get($options, "border");
-  $border-radius: map-get($options, "border-radius");
-  $width: map-get($options, "width");
-  @if $width != null {
-    width: $width;
+  @include m.button-task-styles();
+  &-edit {
+    @include m.button-hover(variables.$hover-edit-color);
   }
-  background-color: $bg-color;
-  color: $text-color;
-  padding: $padding;
-  font-size: $font-size;
-  font-family: variables.$font-family;
-  font-weight: 500;
-  text-align: center;
-  border: $border;
-  border-radius: $border-radius;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  &:hover {
-    background-color: darken($bg-color, 15%);
+  &-delete {
+    @include m.button-hover(variables.$hover-delete-color);
+  }
+  &-add {
+    border: 2px dotted #acacac;
+    border-radius: 50%;
+    font-size: 15px;
+    height: 20px;
+    width: 20px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include m.button-hover(variables.$hover-add-color);
+  }
+  &-close {
+    @include m.button-hover(variables.$hover-delete-color);
   }
 }
+
 .button--active {
   opacity: 1;
 }
@@ -60,7 +37,7 @@
   $border: none;
   $border-radius: 18px;
   &--warm-pink {
-    @include button(
+    @include m.button(
       (
         "bg-color": variables.$clr-warm-pink,
         "text-color": variables.$text-clr-light,
@@ -72,7 +49,7 @@
     );
   }
   &--soft-blue {
-    @include button(
+    @include m.button(
       (
         "bg-color": variables.$clr-soft-blue,
         "text-color": variables.$text-clr-light,
@@ -84,7 +61,7 @@
     );
   }
   &--cyan {
-    @include button(
+    @include m.button(
       (
         "bg-color": variables.$clr-cyan,
         "text-color": variables.$text-clr-light,
@@ -98,7 +75,7 @@
   &--mint-green {
     $border: none;
     $border-radius: 18px;
-    @include button(
+    @include m.button(
       (
         "bg-color": variables.$clr-mint-green,
         "text-color": variables.$text-clr-light,
@@ -110,7 +87,7 @@
     );
   }
   &--orange {
-    @include button(
+    @include m.button(
       (
         "bg-color": variables.$clr-orange,
         "text-color": variables.$text-clr-light,
@@ -127,7 +104,7 @@
   $border: none;
   $border-radius: 18px;
   &--completed {
-    @include button(
+    @include m.button(
       (
         "bg-color": variables.$clr-blue,
         "text-color": variables.$text-clr-light,
@@ -139,7 +116,7 @@
     );
   }
   &--pending {
-    @include button(
+    @include m.button(
       (
         "bg-color": variables.$clr-warm-pink,
         "text-color": variables.$text-clr-light,
@@ -151,7 +128,7 @@
     );
   }
   &--in-progress {
-    @include button(
+    @include m.button(
       (
         "bg-color": variables.$clr-orange,
         "text-color": variables.$text-clr-light,
@@ -162,40 +139,35 @@
       )
     );
   }
-
 }
-
 
 .button__login {
-    width: 325px;
-    height: 58px;
-    background-color: variables.$clr-primary;
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
-    font-size: variables.$fs-base;
-    font-weight: bold;
-    color: variables.$text-clr-light;
-  }
-  
-  .button__login:hover {
-    background-color: variables.$clr-mint-green;
-  }
-
-.button__createtask{
-    width: 58px;
-    height: 58px;
-    background-color: variables.$clr-primary;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    font-size: 40px;
-    font-weight: bold;
-    color: variables.$text-clr-light;
-  }
-  .button__createtask:hover {
-    background-color: variables.$clr-mint-green;
-  }
-
+  width: 325px;
+  height: 58px;
+  background-color: variables.$clr-primary;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  font-size: variables.$fs-base;
+  font-weight: bold;
+  color: variables.$text-clr-light;
 }
 
+.button__login:hover {
+  background-color: variables.$clr-mint-green;
+}
+
+.button__createtask {
+  width: 58px;
+  height: 58px;
+  background-color: variables.$clr-primary;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+  font-weight: bold;
+  color: variables.$text-clr-light;
+}
+.button__createtask:hover {
+  background-color: variables.$clr-mint-green;
+}
