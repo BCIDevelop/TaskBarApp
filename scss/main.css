@@ -651,7 +651,8 @@ body {
   width: 408px;
 }
 
-.user-card {
+.user-card,
+.main-user-card {
   width: 100%;
   height: 60px;
   display: flex;
@@ -660,13 +661,28 @@ body {
   align-items: center;
   position: relative;
   cursor: pointer;
+  gap: 2rem;
+}
+.user-card__icon,
+.main-user-card__icon {
+  color: gray;
+  transition: all 0.5s ease-in-out;
+}
+.user-card__icon:hover,
+.main-user-card__icon:hover {
+  color: black;
+}
+.user-card-profile__image,
+.main-user-card-profile__image {
+  height: 50px;
+  border-radius: 50%;
 }
 
 .user-card--hover-on {
   display: none;
   width: 2px;
   height: 100%;
-  background-color: #08A0F7;
+  background-color: #08a0f7;
   position: absolute;
   left: 0;
 }
@@ -684,13 +700,14 @@ body {
   justify-content: space-evenly;
   width: 50%;
   align-items: center;
+  gap: 10px;
 }
 
 .user-card__paragraph {
   width: 50%;
   font-size: 12px;
   text-align: end;
-  color: #41475E;
+  color: #41475e;
   opacity: 50%;
 }
 
@@ -698,8 +715,11 @@ body {
   letter-spacing: 0.5px;
   line-height: 23px;
   font-size: 14px;
-  color: #121212;
+  color: #000000;
   opacity: 0.7;
+}
+.user-card-profile__name span {
+  font-weight: 400;
 }
 
 .user-card-profile__image {
