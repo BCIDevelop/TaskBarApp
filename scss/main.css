@@ -634,6 +634,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  pointer-events: none;
 }
 
 .search_container__icon {
