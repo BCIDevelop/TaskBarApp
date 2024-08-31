@@ -1,0 +1,49 @@
+@use '../shared/variables';
+
+@mixin user-card-dimensions($search-input-width) {
+    width: $search-input-width;
+  }
+
+  .search_input_container{
+    display: flex;
+    
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: variables.$box-shadow;
+    @include user-card-dimensions(325px);
+    height: 46px;
+    border-radius: 20px;
+    position: relative;
+  }
+  .search_input_container__search_input{
+    height: 100%;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid;
+    border-color:variables.$text-clr-dark; ;
+  }
+  .search_container{
+    position: absolute;
+    left: 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: variables.$gap-buttons;
+    pointer-events: none;
+    
+  }
+  .search_container__icon{
+    width: 24px;
+    height: 24px;
+    filter: invert(90%) sepia(12%) saturate(114%) hue-rotate(189deg) brightness(88%) contrast(83%);
+  }
+  .search_container__text{
+    color: variables.$text-clr-dark;
+    font-weight: variables.$font-weight-date;
+    font-size: 15px;
+  }
+  .search_input_container__search_input:focus ~ .search_input__wrapper {
+    display: none;
+   }
