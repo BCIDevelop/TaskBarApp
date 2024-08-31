@@ -1,69 +1,76 @@
-@import '../shared/variables';
+@import "../shared/variables";
 
 .menu {
     width: 334px;
-    height: 725px;
+    height: 100vh;
     background-color: $text-clr-light;
-    padding: 20px;
+    padding:  30px 20px;
     box-sizing: border-box;
     border: 1px solid $text-clr-dark;
-    border-radius: 24px;
+    border-radius:  24px 0 0 24px;
     font-family: $font-family;
-  }
-  
-  .user {
+    position: absolute;
+    //display: none;
+    top: 0;
+    right: -334px;
+    z-index: 5;
+    transition: all .5s ease-out;
+}
+.menu-show{
+    right: -0px;
+}
+.user {
     text-align: center;
     margin-bottom: 40px;
-  }
-  
-  .user__picture {
+}
+
+.user__picture {
     width: 68px;
     height: 68px;
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto;
-  }
-  
-  .user__name {
+}
+
+.user__name {
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
-  }
-  
-  .user__description {
+}
+
+.user__description {
     font-size: $fs-base;
     color: $text-clr-dark;
-  }
-  
-  .menu__options {
+}
+
+.menu__options {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
+}
 
-  .menu__icon{
+.menu__icon {
     max-height: 24px;
     max-width: 24px;
-  }
-  
-  .menu__option {
-    width: 314px;
-    height: 56px;
+}
+
+.menu__option {
     background-color: $text-clr-light;
     border-bottom: 1px solid #ddd;
-    padding: 10px;
-    box-sizing: border-box;
-    
-  }
-  
-  .menu__option:hover {
+}
+.menu__option a {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding:15px;
+}
+.menu__option:hover {
     background-color: $text-clr-dark;
-  }
-  
-  .menu__option a {
+}
+
+.menu__option a {
     text-decoration: none;
     color: $text-clr-darker;
     font-size: $fs-base;
     font-weight: bold;
-  }
-  
+}

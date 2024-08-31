@@ -3,6 +3,14 @@
 
 .cards__container {
     @include m.cards-container(v.$padding-card-cont, v.$gap-container);
+    &-heading{
+        display: flex;
+        justify-content: space-between;
+        & h2{
+            margin: 0
+        }
+       
+    }
 }
 
 .card {

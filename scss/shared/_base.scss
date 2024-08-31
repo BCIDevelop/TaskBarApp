@@ -1,8 +1,10 @@
-@use './variables';
+@use "./variables";
 body {
     font-family: variables.$font-family;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    position: relative;
 }
 
 *,

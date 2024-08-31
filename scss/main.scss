@@ -5,5 +5,7 @@
 @use './components/alerts';
 @use './components/calendar';
 @use './components/menu';
+@use './layout/header';
+@use './layout/layout';
 @use './components/user_card';
 @use './components/search_input';
