@@ -1,0 +1,27 @@
+@use '../shared/variables';
+
+.main_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_container{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 325px;
+    justify-content: center;
+}
+.login_container__welcome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome_heading{
+    font-size: variables.$fs-large;
+    font-weight: variables.$font-weight-date;
+}
