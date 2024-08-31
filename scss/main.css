@@ -34,7 +34,7 @@
 .card__body {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-top: 8px;
 }
 .card__details {
@@ -79,16 +79,55 @@
 }
 .card__buttons {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
+}
+
+.progress__card {
+  width: 95%;
+  margin: 20px auto 0;
+  padding: 20px;
+  border: 1px solid #bec0c7;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.progress-date {
+  color: #bec0c7;
+}
+
+.progress-title {
+  color: #090f24;
+  font-weight: bold;
+}
+
+.progress-details {
+  color: #bec0c7;
 }
 
 body {
   font-family: "Poppins", system-ui;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
+  min-height: 100vh;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 *,
@@ -629,12 +668,12 @@ body {
 /* Small Desktop - 1024px */
 .overlay {
   background-color: rgba(9, 15, 36, 0.4745098039);
-  width: 100%;
-  height: 100vh;
   position: absolute;
   z-index: 4;
   top: 0;
   bottom: 0;
+  left: 0;
+  right: 0;
   display: none;
   opacity: 0;
   transition: all 0.5s ease-in-out;
@@ -660,13 +699,25 @@ body {
   align-items: center;
   position: relative;
   cursor: pointer;
+  gap: 2rem;
+}
+.user-card__icon {
+  color: gray;
+  transition: all 0.5s ease-in-out;
+}
+.user-card__icon:hover {
+  color: black;
+}
+.user-card-profile__image {
+  height: 50px;
+  border-radius: 50%;
 }
 
 .user-card--hover-on {
   display: none;
   width: 2px;
   height: 100%;
-  background-color: #08A0F7;
+  background-color: #08a0f7;
   position: absolute;
   left: 0;
 }
@@ -684,13 +735,14 @@ body {
   justify-content: space-evenly;
   width: 50%;
   align-items: center;
+  gap: 10px;
 }
 
 .user-card__paragraph {
   width: 50%;
   font-size: 12px;
   text-align: end;
-  color: #41475E;
+  color: #41475e;
   opacity: 50%;
 }
 
@@ -698,13 +750,45 @@ body {
   letter-spacing: 0.5px;
   line-height: 23px;
   font-size: 14px;
-  color: #121212;
+  color: #000000;
   opacity: 0.7;
+}
+.user-card-profile__name span {
+  font-weight: 400;
 }
 
 .user-card-profile__image {
   width: 36px;
   height: 36px;
+  border-radius: 50%;
+}
+
+.main-user-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+  align-items: center;
+  position: relative;
+  gap: 2rem;
+}
+.main-user-card .user-card__profile {
+  width: auto;
+}
+.main-user-card .user-card-profile__name {
+  display: flex;
+  flex-direction: column;
+}
+.main-user-card__icon {
+  cursor: pointer;
+  color: gray;
+  transition: all 0.5s ease-in-out;
+}
+.main-user-card__icon:hover {
+  color: black;
+}
+.main-user-card-profile__image {
+  height: 50px;
   border-radius: 50%;
 }
 
@@ -834,4 +918,165 @@ body {
 
 .visible {
   display: block;
+}
+
+.category {
+  padding: 1.25rem;
+}
+.category__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.category__title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.category__link {
+  font-size: 14px;
+  color: #f2a03d;
+  font-weight: 400;
+  text-decoration: none;
+}
+.category__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.category__card-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.category__card-tasks {
+  font-size: 12px;
+}
+.category__card--personal {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #9dd7bd;
+}
+.category__card--college {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #f26680;
+}
+.category__card--community {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #f2a03d;
+}
+.category__card--others {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #7789f2;
+}
+
+.progress-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(#3498db 0% 15%, #e0e0e0 15% 100%);
+  position: relative;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+}
+.circle span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3498db;
+}
+
+.create-task {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 90%;
+  position: relative;
+  margin: 20px auto;
+}
+.create-task .close_modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+}
+.create-task__title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+.create-task__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.create-task__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.create-task__field label {
+  font-size: 0.9rem;
+  color: #333;
+}
+.create-task__field input, .create-task__field textarea {
+  padding: 0.5rem;
+  border: 1px solid #bec0c7;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.create-task__field input:focus, .create-task__field textarea:focus {
+  border-color: #ff8142;
+  outline: none;
+}
+.create-task__options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.create-task__option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.create-task__option-label {
+  margin-left: 0.5rem;
+  color: #333;
+  font-size: 1rem;
+}
+.create-task__option-icon {
+  font-size: 1.5rem;
+  color: #333;
+}
+.create-task__submit {
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */

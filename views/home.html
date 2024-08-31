@@ -21,6 +21,101 @@
         </header>
 
         <div class="overlay" id="nav-overlay" onclick="closeNavBar()"></div>
+        <div
+            class="overlay"
+            id="create-task-overlay"
+            onclick="closeCreateTask()"
+        >
+            <div class="create-task">
+                <button class="close_modal button__task button__task-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h2 class="create-task__title">Crear Nueva Tarea</h2>
+                <form class="create-task__form">
+                    <div class="create-task__field">
+                        <label class="create-task__label" for="title"
+                            >Título</label
+                        >
+                        <input
+                            type="text"
+                            id="title"
+                            class="create-task__input"
+                            aria-label="title"
+                            placeholder=""
+                        />
+                    </div>
+                    <div class="create-task__field">
+                        <label class="create-task__label" for="description"
+                            >Descripción</label
+                        >
+                        <textarea
+                            name="description"
+                            id="description"
+                            class="create-task__textarea"
+                            aria-expanded="false"
+                            rows="4"
+                        ></textarea>
+                    </div>
+                    <div class="create-task__options">
+                        <div class="create-task__option">
+                            <i
+                                class="fa-solid fa-tag create-task__option-icon"
+                            ></i>
+                            <p class="create-task__option-label">Categoría</p>
+                            <button class="button__task button__task-add">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="create-task__option">
+                            <i
+                                class="fa-solid fa-square-poll-vertical create-task__option-icon"
+                            ></i>
+                            <p class="create-task__option-label">Estado</p>
+                            <button class="button__task button__task-add">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="create-task__option">
+                            <i
+                                class="fa-solid fa-calendar-days create-task__option-icon"
+                            ></i>
+                            <p class="create-task__option-label">
+                                Fecha Inicio
+                            </p>
+                            <button class="button__task button__task-add">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="create-task__option">
+                            <i
+                                class="fa-solid fa-calendar-days create-task__option-icon"
+                            ></i>
+                            <p class="create-task__option-label">Fecha Fin</p>
+                            <button class="button__task button__task-add">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="create-task__option">
+                            <i
+                                class="fa-solid fa-user create-task__option-icon"
+                            ></i>
+                            <p class="create-task__option-label">
+                                Responsables
+                            </p>
+                            <button class="button__task button__task-add">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <input
+                        type="submit"
+                        class="btn-submit"
+                        value="Registrar"
+                        aria-label="Registrar"
+                    />
+                </form>
+            </div>
+        </div>
         <main>
             <aside class="menu" id="navbar">
                 <button
@@ -77,13 +172,71 @@
                     </li>
                 </ul>
             </aside>
-            
+
+            <div class="main-user-card">
+                <div class="user-card__profile">
+                    <img
+                        class="main-user-card-profile__image"
+                        src="../scss/assets/image/user1.svg"
+                        alt="user1"
+                    />
+                    <h2 class="user-card-profile__name">
+                        <span>Buenas tardes </span> Angela Smith
+                    </h2>
+                </div>
+                <i class="main-user-card__icon fa-solid fa-bell"></i>
+            </div>
+
+            <div class="progress__card">
+                <div>
+                    <h2>Progreso</h2>
+                    <p class="progress-date">Fecha</p>
+                    <p class="progress-title">Título de la actividad</p>
+                    <p class="progress-details">descripcion</p>
+                </div>
+                <div class="progress-circle">
+                    <div class="circle">
+                        <span>15%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category__header">
+                    <h2 class="category__title">Categorias</h2>
+                    <a href="#" class="category__link">Ver Todos</a>
+                </div>
+
+                <div class="category__cards">
+                    <a href="#" class="category__card category__card--personal">
+                        <h3 class="category__card-title">Personal</h3>
+                        <p class="category__card-tasks">8 Task</p>
+                    </a>
+                    <a href="#" class="category__card category__card--college">
+                        <h3 class="category__card-title">Business</h3>
+                        <p class="category__card-tasks">6 Task</p>
+                    </a>
+                    <a
+                        href="#"
+                        class="category__card category__card--community"
+                    >
+                        <h3 class="category__card-title">Community</h3>
+                        <p class="category__card-tasks">8 Task</p>
+                    </a>
+                    <a href="#" class="category__card category__card--others">
+                        <h3 class="category__card-title">Student</h3>
+                        <p class="category__card-tasks">6 Task</p>
+                    </a>
+                </div>
+            </div>
+            <button class="button__createtask" onclick="showCreateTask()">
+                +
+            </button>    
         </main>
         <script
             src="https://kit.fontawesome.com/b556484ff9.js"
             crossorigin="anonymous"
         ></script>
         <script src="../js/index.js"></script>
-        <button class="button__createtask">+</button>
     </body>
 </html>

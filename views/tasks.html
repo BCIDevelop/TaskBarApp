@@ -21,6 +21,101 @@
         </header>
 
         <div class="overlay" id="nav-overlay" onclick="closeNavBar()"></div>
+        <div
+            class="overlay"
+            id="create-task-overlay"
+            onclick="closeCreateTask()"
+        >
+            <div class="create-task">
+                <button class="close_modal button__task button__task-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h2 class="create-task__title">Crear Nueva Tarea</h2>
+                <form class="create-task__form">
+                    <div class="create-task__field">
+                        <label class="create-task__label" for="title"
+                            >Título</label
+                        >
+                        <input
+                            type="text"
+                            id="title"
+                            class="create-task__input"
+                            aria-label="title"
+                            placeholder=""
+                        />
+                    </div>
+                    <div class="create-task__field">
+                        <label class="create-task__label" for="description"
+                            >Descripción</label
+                        >
+                        <textarea
+                            name="description"
+                            id="description"
+                            class="create-task__textarea"
+                            aria-expanded="false"
+                            rows="4"
+                        ></textarea>
+                    </div>
+                    <div class="create-task__options">
+                        <div class="create-task__option">
+                            <i
+                                class="fa-solid fa-tag create-task__option-icon"
+                            ></i>
+                            <p class="create-task__option-label">Categoría</p>
+                            <button class="button__task button__task-add">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="create-task__option">
+                            <i
+                                class="fa-solid fa-square-poll-vertical create-task__option-icon"
+                            ></i>
+                            <p class="create-task__option-label">Estado</p>
+                            <button class="button__task button__task-add">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="create-task__option">
+                            <i
+                                class="fa-solid fa-calendar-days create-task__option-icon"
+                            ></i>
+                            <p class="create-task__option-label">
+                                Fecha Inicio
+                            </p>
+                            <button class="button__task button__task-add">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="create-task__option">
+                            <i
+                                class="fa-solid fa-calendar-days create-task__option-icon"
+                            ></i>
+                            <p class="create-task__option-label">Fecha Fin</p>
+                            <button class="button__task button__task-add">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="create-task__option">
+                            <i
+                                class="fa-solid fa-user create-task__option-icon"
+                            ></i>
+                            <p class="create-task__option-label">
+                                Responsables
+                            </p>
+                            <button class="button__task button__task-add">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <input
+                        type="submit"
+                        class="btn-submit"
+                        value="Registrar"
+                        aria-label="Registrar"
+                    />
+                </form>
+            </div>
+        </div>
         <main>
             <aside class="menu" id="navbar">
                 <button
@@ -199,11 +294,13 @@
                     </div>
                 </div>
                 <div class="card card__personal">
-                    <div class="card__tags">
-                        <div class="card__tag card__tag-pending">Pendiente</div>
-                    </div>
                     <div class="card__body">
                         <div class="card__details">
+                            <div class="card__tags">
+                                <div class="card__tag card__tag-pending">
+                                    Pendiente
+                                </div>
+                            </div>
                             <p class="card__date">Lunes,12 de Junio 2025</p>
                             <h2 class="card__title">Prueba de Titulo</h2>
                         </div>
@@ -218,13 +315,13 @@
                     </div>
                 </div>
                 <div class="card card__others">
-                    <div class="card__tags">
-                        <div class="card__tag card__tag-inprogress">
-                            En Progreso
-                        </div>
-                    </div>
                     <div class="card__body">
                         <div class="card__details">
+                            <div class="card__tags">
+                                <div class="card__tag card__tag-inprogress">
+                                    En Progreso
+                                </div>
+                            </div>
                             <p class="card__date">Lunes,12 de Junio 2025</p>
                             <h2 class="card__title">Prueba de Titulo</h2>
                         </div>
@@ -239,13 +336,13 @@
                     </div>
                 </div>
                 <div class="card card__college">
-                    <div class="card__tags">
-                        <div class="card__tag card__tag-complete">
-                            Completado
-                        </div>
-                    </div>
                     <div class="card__body">
                         <div class="card__details">
+                            <div class="card__tags">
+                                <div class="card__tag card__tag-complete">
+                                    Completado
+                                </div>
+                            </div>
                             <p class="card__date">Lunes,12 de Junio 2025</p>
                             <h2 class="card__title">Prueba de Titulo</h2>
                         </div>
@@ -260,12 +357,14 @@
                     </div>
                 </div>
             </div>
+            <button class="button__createtask" onclick="showCreateTask()">
+                +
+            </button>
         </main>
         <script
             src="https://kit.fontawesome.com/b556484ff9.js"
             crossorigin="anonymous"
         ></script>
         <script src="../js/index.js"></script>
-        <button class="button__createtask">+</button>
     </body>
 </html>
