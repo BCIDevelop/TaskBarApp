@@ -1,0 +1,59 @@
+@use "../shared/variables" as variables;
+@use "../shared/mixin" as mixin;
+
+.category {
+   padding: 1.25rem;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    &__title {
+      font-size: variables.$fs-base;
+      font-weight: bold;
+    }
+  
+    &__link {
+      font-size: variables.$fs-medium;
+      color: variables.$clr-orange;
+      font-weight: 400;
+      text-decoration: none;
+    }
+  
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }  
+
+  }
+
+  .category__card {
+    &-title {
+       font-size: variables.$fs-medium;
+       font-weight: bold;
+   }
+   
+   &-tasks {
+       font-size: variables.$fs-small;
+   }
+
+   
+   &--personal {
+     @include mixin.category-card(variables.$clr-green-light); 
+   }
+
+   &--college {
+     @include mixin.category-card(variables.$clr-warm-pink); 
+   }
+
+   &--community {
+     @include mixin.category-card(variables.$clr-orange); 
+   }
+
+   &--others {
+     @include mixin.category-card(variables.$clr-soft-blue); 
+   }
+ }
