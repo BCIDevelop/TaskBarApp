@@ -1,3 +1,4 @@
+@use './variables' as variables;
 
 @mixin flex-center {
     display: flex;
@@ -66,3 +67,30 @@
 @mixin card-variant($border-color) {
     border-color: $border-color;
 }
+
+@mixin button($options) {
+    $bg-color: map-get($options, "bg-color");
+    $text-color: map-get($options, "text-color");
+    $padding: map-get($options, "padding");
+    $font-size: map-get($options, "font-size");
+    $border: map-get($options, "border");
+    $border-radius: map-get($options, "border-radius");
+    $width: map-get($options, "width");
+    @if $width != null {
+      width: $width;
+    }
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $padding;
+    font-size: $font-size;
+    font-family: variables.$font-family;
+    font-weight: 500;
+    text-align: center;
+    border: $border;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: darken($bg-color, 15%);
+    }
+  }
