@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskBar App</title>
+    <link type="text/css" rel="stylesheet" href="./scss/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <br />
+    <br />
+    
+    <section class="buttons__category">
+        <button class="button__category--warm-pink button--active">Warm Pink</button>
+        <button class="button__category--soft-blue button--default">Soft Blue</button>
+        <button class="button__category--cyan button--default">Cyan</button>
+        <button class="button__category--mint-green button--default">Mint Green</button>
+        <button class="button__category--orange button--default">Orange</button>
+    </section>
+
+    <br />
+    <br />
+
+    <section class="buttons__status">
+        <button class="button__status--completed button--active">Completed</button>
+        <button class="button__status--pending button--default">Pending</button>
+        <button class="disable button__status--in-progress button--default">In progress</button>
+    </section>
+
+    <br />
+    <br />
+
+    <section class="calendar-filter">
+        <div class="calendar">
+            <div class="calendar__day calendar__day--active">
+                <span class="calendar__day-name">DOM</span>
+                <span class="calendar__day-number">15</span>
+            </div>
+            <div class="calendar__day">
+                <span class="calendar__day-name">LUN</span>
+                <span class="calendar__day-number">16</span>
+            </div>
+            <div class="calendar__day">
+                <span class="calendar__day-name">MAR</span>
+                <span class="calendar__day-number">17</span>
+            </div>
+            <div class="calendar__day">
+                <span class="calendar__day-name">MIER</span>
+                <span class="calendar__day-number">18</span>
+            </div>
+            <div class="calendar__day">
+                <span class="calendar__day-name">JUEV</span>
+                <span class="calendar__day-number">19</span>
+            </div>
+        </div>
+
+
+    </section>
+
+    <br />
+    <br />
+
+    <section class="alerts">
+        <div class="alert alert--error">
+            <div class="alert__icon">!</div>
+            <div class="alert__content">
+                <h3 class="alert__title">Algo salió mal</h3>
+                <p class="alert__description">Lorem ipsum dolor sit amet</p>
+            </div>
+        </div>
+
+        <div class="alert alert--warning">
+            <div class="alert__icon">!</div>
+            <div class="alert__content">
+                <h3 class="alert__title">Need Attention</h3>
+                <p class="alert__description">Lorem ipsum dolor sit amet</p>
+            </div>
+        </div>
+
+        <div class="alert alert--success">
+            <div class="alert__icon">&#10003;</div>
+            <div class="alert__content">
+                <h3 class="alert__title">Exito</h3>
+                <p class="alert__description">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor
+                    sit amet</p>
+            </div>
+        </div>
+
+        <div class="alert alert--info">
+            <div class="alert__icon">&#10003;</div>
+            <div class="alert__content">
+                <h3 class="alert__title">Other Condition</h3>
+                <p class="alert__description">Lorem ipsum dolor sit amet</p>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>
