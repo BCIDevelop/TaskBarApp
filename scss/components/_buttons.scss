@@ -162,4 +162,40 @@
       )
     );
   }
+
 }
+
+
+.button__login {
+    width: 325px;
+    height: 58px;
+    background-color: variables.$clr-primary;
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+    font-size: variables.$fs-base;
+    font-weight: bold;
+    color: variables.$text-clr-light;
+  }
+  
+  .button__login:hover {
+    background-color: variables.$clr-mint-green;
+  }
+
+.button__createtask{
+    width: 58px;
+    height: 58px;
+    background-color: variables.$clr-primary;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 40px;
+    font-weight: bold;
+    color: variables.$text-clr-light;
+  }
+  .button__createtask:hover {
+    background-color: variables.$clr-mint-green;
+  }
+
+}
+
