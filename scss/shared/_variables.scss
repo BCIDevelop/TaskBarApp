@@ -1,11 +1,13 @@
 /* Font styles */
 $font-family: "Poppins", system-ui;
 $fs-base: 16px;
-$fs-large: 24px;
-$fs-small: 10px;
+$fs-large:24px;
+$fs-x-small:10px;
+$fs-small: 12px;
 $fs-medium: 14px;
-
 /* Colors */
+$clr-blue: #0521D8;
+$clr-light:#FFFFFF;
 $clr-primary: #ff8142;
 $clr-warm-pink: #f26680;
 $clr-yellow: #e9da12;
@@ -36,41 +38,39 @@ $text-clr-light: #ffffff;
 $text-clr-darker: #090f24;
 $text-clr-dark: #bec0c7;
 $text-clr-stone: #333;
-
 /* Spacings */
 $gap-row-tags: 4px;
 $gap-col-login: 19px;
 $gap-col-cards: 12px;
 $gap-col-details: 5px;
 $gap-col-icons: 10px;
-
+$gap-col-calendar-day: 1rem;
 /* Margins */
 $margin-primary: 33px;
-
+/* Alerts */
+$clr-alert-error:  #F85640;
+$clr-alert-warning: #FBA63C;
+$clr-alert-success: #34A770;
+$clr-alert-info: #08A0F7;
 /* Paddings */
 $padding-tag: 4px 10px;
 $padding-card-y: 15px;
 $padding-card-x: 20px;
 $padding-card-cont: 20px;
-
 /* Tamaños */
 $size-icon-card: 18px;
-
 /* Gaps */
 $gap-container: 20px;
 $gap-details: 5px;
 $gap-buttons: 10px;
-
 /* Fuentes y Bordes */
 $font-size-tag: 14px;
 $border-radius: 6px;
 $border-radius-tag: 5px;
 $font-weight-date: 500;
-
 /* Sombra y Colores */
 $box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.19);
 $modal-shadow-color: rgba(0, 0, 0, 0.1);
-
 /* HOVER */
 $hover-add-color: #4e4e4e;
 $hover-edit-color: #2e9424;

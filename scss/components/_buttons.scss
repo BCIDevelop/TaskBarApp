@@ -1,15 +1,15 @@
-@use "../shared/variables" as v;
+@use "../shared/variables" as variables;
 @use "../shared/mixin" as m;
 .button__task {
     @include m.button-task-styles();
     &-edit {
-        @include m.button-hover(v.$hover-edit-color);
+        @include m.button-hover(variables.$hover-edit-color);
     }
     &-delete {
-        @include m.button-hover(v.$hover-delete-color);
+        @include m.button-hover(variables.$hover-delete-color);
     }
     &-add {
-        border: 2px dotted #acacac;
+        border: 2px dotted #ACACAC;
         border-radius: 50%;
         font-size: 15px;
         height: 20px;
@@ -18,9 +18,148 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        @include m.button-hover(v.$hover-add-color);
+        @include m.button-hover(variables.$hover-add-color);
     }
     &-close{
-        @include m.button-hover(v.$hover-delete-color);
+        @include m.button-hover(variables.$hover-delete-color);
     }
+@mixin button($options) {
+  $bg-color: map-get($options, "bg-color");
+  $text-color: map-get($options, "text-color");
+  $padding: map-get($options, "padding");
+  $font-size: map-get($options, "font-size");
+  $border: map-get($options, "border");
+  $border-radius: map-get($options, "border-radius");
+  $width: map-get($options, "width");
+  @if $width != null {
+    width: $width;
+  }
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $padding;
+  font-size: $font-size;
+  font-family: variables.$font-family;
+  font-weight: 500;
+  text-align: center;
+  border: $border;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: darken($bg-color, 15%);
+  }
+}
+.button--active {
+  opacity: 1;
+}
+.button--default {
+  opacity: 0.5;
+}
+.button__category {
+  $button-padding: 0.7rem 1.4rem;
+  $border: none;
+  $border-radius: 18px;
+  &--warm-pink {
+    @include button(
+      (
+        "bg-color": variables.$clr-warm-pink,
+        "text-color": variables.$text-clr-light,
+        "padding": $button-padding,
+        "font-size": variables.$fs-medium,
+        "border": $border,
+        "border-radius": $border-radius,
+      )
+    );
+  }
+  &--soft-blue {
+    @include button(
+      (
+        "bg-color": variables.$clr-soft-blue,
+        "text-color": variables.$text-clr-light,
+        "padding": $button-padding,
+        "font-size": variables.$fs-medium,
+        "border": $border,
+        "border-radius": $border-radius,
+      )
+    );
+  }
+  &--cyan {
+    @include button(
+      (
+        "bg-color": variables.$clr-cyan,
+        "text-color": variables.$text-clr-light,
+        "padding": $button-padding,
+        "font-size": variables.$fs-medium,
+        "border": $border,
+        "border-radius": $border-radius,
+      )
+    );
+  }
+  &--mint-green {
+    $border: none;
+    $border-radius: 18px;
+    @include button(
+      (
+        "bg-color": variables.$clr-mint-green,
+        "text-color": variables.$text-clr-light,
+        "padding": $button-padding,
+        "font-size": variables.$fs-medium,
+        "border": $border,
+        "border-radius": $border-radius,
+      )
+    );
+  }
+  &--orange {
+    @include button(
+      (
+        "bg-color": variables.$clr-orange,
+        "text-color": variables.$text-clr-light,
+        "padding": $button-padding,
+        "font-size": variables.$fs-medium,
+        "border": $border,
+        "border-radius": $border-radius,
+      )
+    );
+  }
+}
+.button__status {
+  $button-padding: 0.7rem 1.4rem;
+  $border: none;
+  $border-radius: 18px;
+  &--completed {
+    @include button(
+      (
+        "bg-color": variables.$clr-blue,
+        "text-color": variables.$text-clr-light,
+        "padding": $button-padding,
+        "font-size": variables.$fs-medium,
+        "border": $border,
+        "border-radius": $border-radius,
+      )
+    );
+  }
+  &--pending {
+    @include button(
+      (
+        "bg-color": variables.$clr-warm-pink,
+        "text-color": variables.$text-clr-light,
+        "padding": $button-padding,
+        "font-size": variables.$fs-medium,
+        "border": $border,
+        "border-radius": $border-radius,
+      )
+    );
+  }
+  &--in-progress {
+    @include button(
+      (
+        "bg-color": variables.$clr-orange,
+        "text-color": variables.$text-clr-light,
+        "padding": $button-padding,
+        "font-size": variables.$fs-medium,
+        "border": $border,
+        "border-radius": $border-radius,
+      )
+    );
+  }
 }
