@@ -1,5 +1,28 @@
 @use "../shared/variables" as variables;
-
+@use "../shared/mixin" as m;
+.button__task {
+    @include m.button-task-styles();
+    &-edit {
+        @include m.button-hover(variables.$hover-edit-color);
+    }
+    &-delete {
+        @include m.button-hover(variables.$hover-delete-color);
+    }
+    &-add {
+        border: 2px dotted #ACACAC;
+        border-radius: 50%;
+        font-size: 15px;
+        height: 20px;
+        width: 20px;
+        padding: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include m.button-hover(variables.$hover-add-color);
+    }
+    &-close{
+        @include m.button-hover(variables.$hover-delete-color);
+    }
 @mixin button($options) {
   $bg-color: map-get($options, "bg-color");
   $text-color: map-get($options, "text-color");
@@ -8,11 +31,9 @@
   $border: map-get($options, "border");
   $border-radius: map-get($options, "border-radius");
   $width: map-get($options, "width");
-
   @if $width != null {
     width: $width;
   }
-
   background-color: $bg-color;
   color: $text-color;
   padding: $padding;
@@ -24,25 +45,20 @@
   border-radius: $border-radius;
   cursor: pointer;
   transition: background-color 0.3s ease;
-
   &:hover {
     background-color: darken($bg-color, 15%);
   }
 }
-
 .button--active {
   opacity: 1;
 }
-
 .button--default {
   opacity: 0.5;
 }
-
 .button__category {
   $button-padding: 0.7rem 1.4rem;
   $border: none;
   $border-radius: 18px;
-
   &--warm-pink {
     @include button(
       (
@@ -55,7 +71,6 @@
       )
     );
   }
-
   &--soft-blue {
     @include button(
       (
@@ -68,7 +83,6 @@
       )
     );
   }
-
   &--cyan {
     @include button(
       (
@@ -81,7 +95,6 @@
       )
     );
   }
-
   &--mint-green {
     $border: none;
     $border-radius: 18px;
@@ -96,7 +109,6 @@
       )
     );
   }
-
   &--orange {
     @include button(
       (
@@ -110,12 +122,10 @@
     );
   }
 }
-
 .button__status {
   $button-padding: 0.7rem 1.4rem;
   $border: none;
   $border-radius: 18px;
-
   &--completed {
     @include button(
       (
@@ -128,7 +138,6 @@
       )
     );
   }
-
   &--pending {
     @include button(
       (
@@ -141,7 +150,6 @@
       )
     );
   }
-
   &--in-progress {
     @include button(
       (
@@ -154,36 +162,40 @@
       )
     );
   }
+
 }
-@import '../shared/variables';
+
 
 .button__login {
     width: 325px;
     height: 58px;
-    background-color: $clr-primary;
+    background-color: variables.$clr-primary;
     border-radius: 24px;
     border: none;
     cursor: pointer;
-    font-size: $fs-base;
+    font-size: variables.$fs-base;
     font-weight: bold;
-    color: $text-clr-light;
+    color: variables.$text-clr-light;
   }
   
   .button__login:hover {
-    background-color: $clr-mint-green;
+    background-color: variables.$clr-mint-green;
   }
 
 .button__createtask{
     width: 58px;
     height: 58px;
-    background-color: $clr-primary;
+    background-color: variables.$clr-primary;
     border-radius: 50px;
     border: none;
     cursor: pointer;
     font-size: 40px;
     font-weight: bold;
-    color: $text-clr-light;
+    color: variables.$text-clr-light;
   }
   .button__createtask:hover {
-    background-color: $clr-mint-green;
+    background-color: variables.$clr-mint-green;
   }
+
+}
+
