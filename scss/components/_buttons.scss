@@ -1,1 +1,26 @@
-@use '../shared/variables';
+@use "../shared/variables" as v;
+@use "../shared/mixin" as m;
+.button__task {
+    @include m.button-task-styles();
+    &-edit {
+        @include m.button-hover(v.$hover-edit-color);
+    }
+    &-delete {
+        @include m.button-hover(v.$hover-delete-color);
+    }
+    &-add {
+        border: 2px dotted #acacac;
+        border-radius: 50%;
+        font-size: 15px;
+        height: 20px;
+        width: 20px;
+        padding: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include m.button-hover(v.$hover-add-color);
+    }
+    &-close{
+        @include m.button-hover(v.$hover-delete-color);
+    }
+}

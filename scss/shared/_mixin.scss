@@ -1,0 +1,68 @@
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button-task-styles() {
+    all: unset;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    font-size: 20px;
+    color: #acacac;
+}
+@mixin button-hover($hover-color: null) {
+    @if $hover-color {
+        &:hover {
+            color: $hover-color;
+            border-color: $hover-color;
+        }
+    }
+}
+@mixin cards-container($padding, $gap) {
+    display: flex;
+    flex-direction: column;
+    padding: $padding;
+    gap: $gap;
+}
+@mixin card($border-radius, $padding-y, $padding-x, $box-shadow) {
+    border-top: 4px solid;
+    border-radius: $border-radius;
+    padding: $padding-y $padding-x;
+    box-shadow: $box-shadow;
+}
+@mixin align-items($display, $justify, $align, $margin-top: null) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+    @if $margin-top {
+        margin-top: $margin-top;
+    }
+}
+@mixin card-details($gap) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+@mixin text-styles($margin: 0, $color: null, $font-weight: null) {
+    margin: $margin;
+    @if $color {
+        color: $color;
+    }
+    @if $font-weight {
+        font-weight: $font-weight;
+    }
+}
+@mixin tag-styles($bg-color: null, $text-color: null) {
+    @if $bg-color {
+        background-color: $bg-color;
+    }
+    @if $text-color {
+        color: $text-color;
+    }
+}
+
+@mixin card-variant($border-color) {
+    border-color: $border-color;
+}
