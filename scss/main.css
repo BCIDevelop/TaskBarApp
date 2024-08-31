@@ -17,6 +17,13 @@
   padding: 20px;
   gap: 20px;
 }
+.cards__container-heading {
+  display: flex;
+  justify-content: space-between;
+}
+.cards__container-heading h2 {
+  margin: 0;
+}
 
 .card {
   border-top: 4px solid;
@@ -80,6 +87,8 @@ body {
   font-family: "Poppins", system-ui;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  position: relative;
 }
 
 *,
@@ -120,9 +129,38 @@ body {
   color: #4e4e4e;
   border-color: #4e4e4e;
 }
-.button__task-close:hover {
-  color: #b84040;
-  border-color: #b84040;
+
+.buttons__container {
+  display: flex;
+  gap: 10px;
+}
+
+.button__show {
+  all: unset;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  font-size: 25px;
+  color: #acacac;
+}
+.button__show:hover {
+  color: #090f24;
+  border-color: #090f24;
+}
+
+.button__close {
+  all: unset;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  font-size: 25px;
+  color: #acacac;
+  right: 20px;
+  top: 20px;
+  display: flex;
+  position: absolute;
+}
+.button__close:hover {
+  color: #090f24;
+  border-color: #090f24;
 }
 
 .button--active {
@@ -279,6 +317,11 @@ body {
   background-color: #91d99c;
 }
 
+.button__menu {
+  position: relative;
+  cursor: pointer;
+}
+
 .button__createtask {
   width: 58px;
   height: 58px;
@@ -289,6 +332,9 @@ body {
   font-size: 40px;
   font-weight: bold;
   color: #ffffff;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
 }
 
 .button__createtask:hover {
@@ -428,8 +474,9 @@ body {
   font-size: 12px;
 }
 
-.calendar {
+.calendar__container {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   padding: 10px;
   background-color: #f5f5f5;
@@ -480,13 +527,22 @@ body {
 /* HOVER */
 .menu {
   width: 334px;
-  height: 725px;
+  height: 100vh;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 30px 20px;
   box-sizing: border-box;
   border: 1px solid #bec0c7;
-  border-radius: 24px;
+  border-radius: 24px 0 0 24px;
   font-family: "Poppins", system-ui;
+  position: absolute;
+  top: 0;
+  right: -334px;
+  z-index: 5;
+  transition: all 0.5s ease-out;
+}
+
+.menu-show {
+  right: 0px;
 }
 
 .user {
@@ -526,12 +582,15 @@ body {
 }
 
 .menu__option {
-  width: 314px;
-  height: 56px;
   background-color: #ffffff;
   border-bottom: 1px solid #ddd;
-  padding: 10px;
-  box-sizing: border-box;
+}
+
+.menu__option a {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  padding: 15px;
 }
 
 .menu__option:hover {
@@ -544,6 +603,40 @@ body {
   font-size: 16px;
   font-weight: bold;
 }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.header__logo {
+  margin: 10px 0;
+}
+
+.heading-2 {
+  margin: 0;
+}
+
+/* Tablet - 768px */
+/* Small Desktop - 1024px */
+.overlay {
+  background-color: rgba(9, 15, 36, 0.4745098039);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  bottom: 0;
+  display: none;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.overlay-show {
+  opacity: 100%;
+  display: block;
 
 .user-lists {
   list-style: none;
