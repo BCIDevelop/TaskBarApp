@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px 20px ;
+    &__logo{
+        margin: 10px 0;
+    }
+}
+
+.heading-2{
+    margin: 0;
+}

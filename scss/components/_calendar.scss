@@ -1,12 +1,12 @@
 @use "../shared/variables" as variables;
 
-.calendar {
+.calendar__container{
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     padding: 10px;
     background-color: #f5f5f5;
-    gap: variables.$gap-col-calendar-day
-    
+    gap: variables.$gap-col-calendar-day    
 }
 
 .calendar__day {
