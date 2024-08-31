@@ -1,0 +1,61 @@
+@use '../shared/variables';
+
+@mixin user-card-dimensions($user-card-width) {
+    width: $user-card-width;
+  }
+.user-lists{
+    list-style: none;
+    border: 1px solid;
+    @include user-card-dimensions(408px);
+    
+}
+.user-card{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content:space-between ;
+    padding: 14px 26px;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.user-card--hover-on{
+    display: none;
+    width: 2px;
+    height: 100%;
+    background-color: #08A0F7;
+    position: absolute;
+    left: 0;
+}
+.user-card:hover{
+    background-color: variables.$clr-soft-cyan;
+}
+.user-card:hover .user-card--hover-on{
+    display: block;
+}
+.user-card__profile{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    align-items: center;
+}
+.user-card__paragraph{
+    width: 50%;
+    font-size: variables.$fs-small;
+    text-align: end;
+    color: #41475E;
+    opacity: 50%;
+}
+.user-card-profile__name{
+    letter-spacing: 0.5px;
+    line-height: 23px;
+    font-size: variables.$fs-medium ;
+    color: #121212;
+    opacity: 0.7;
+    
+}
+.user-card-profile__image{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
