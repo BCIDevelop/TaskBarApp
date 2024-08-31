@@ -1,5 +1,5 @@
 @use '../shared/variables';
-
+@use '../media-queries';
 .main_container{
     width: 100%;
     display: flex;
@@ -13,15 +13,45 @@
     flex-direction: column;
     width: 325px;
     justify-content: center;
+    gap: variables.$gap-col-login;
+    align-items: center;
+    
 }
 .login_container__welcome{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 11px;
+}
+.welcome__text{
+    font-size: variables.$fs-medium;
+    color: #0A0D14;
+    text-align: center;
+    opacity: 50%;
 }
 
-.welcome_heading{
+.welcome__heading{
     font-size: variables.$fs-large;
     font-weight: variables.$font-weight-date;
+}
+.login_container__forgot{
+    text-align: center;
+    color: #0A0D14;
+    font-size: small;
+    font-weight: variables.$font-weight-date;
+    cursor: pointer;
+    text-decoration: none;
+}
+.login_container__register{
+    font-size: variables.$fs-small;
+    height: 40px;
+    text-align: center;
+    align-self: center;
+    vertical-align:middle;
+}
+.register_anchor{
+    color: variables.$clr-primary;
+    text-decoration: none;
+    cursor: pointer;
 }

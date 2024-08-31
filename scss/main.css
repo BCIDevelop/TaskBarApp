@@ -86,6 +86,8 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .button__task {
@@ -658,9 +660,9 @@ body {
 .form-container {
   display: flex;
   flex-direction: column;
-  height: 332px;
   justify-content: space-between;
   width: 328px;
+  gap: 19px;
 }
 
 /* Button Submit */
@@ -692,6 +694,15 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 100%;
+}
+
+/* Input password Icon Eye */
+.input_containar__password--active {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 15px;
+  cursor: pointer;
 }
 
 /* Texto del input */
@@ -816,6 +827,8 @@ i::after {
   padding-left: 16px;
 }
 
+/* Tablet - 768px */
+/* Small Desktop - 1024px */
 .main_container {
   width: 100%;
   display: flex;
@@ -829,6 +842,8 @@ i::after {
   flex-direction: column;
   width: 325px;
   justify-content: center;
+  gap: 19px;
+  align-items: center;
 }
 
 .login_container__welcome {
@@ -836,9 +851,64 @@ i::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 11px;
 }
 
-.welcome_heading {
+.welcome__text {
+  font-size: 14px;
+  color: #0A0D14;
+  text-align: center;
+  opacity: 50%;
+}
+
+.welcome__heading {
   font-size: 24px;
   font-weight: 500;
+}
+
+.login_container__forgot {
+  text-align: center;
+  color: #0A0D14;
+  font-size: small;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.login_container__register {
+  font-size: 12px;
+  height: 40px;
+  text-align: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.register_anchor {
+  color: #ff8142;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.register_container__welcome {
+  display: flex;
+  flex-direction: column;
+  align-self: self-start;
+  align-items: center;
+  gap: 11px;
+}
+
+.register_container__register {
+  font-size: 12px;
+  height: 40px;
+  text-align: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.main_container_forgot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }/*# sourceMappingURL=main.css.map */

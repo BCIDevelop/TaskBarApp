@@ -4,9 +4,10 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  height: 332px;
+  
   justify-content: space-between;
   width: 328px;
+  gap: 19px;
 }
 
 /* Button Submit */
@@ -39,7 +40,14 @@
   width: 100%;
  
 }
-
+/* Input password Icon Eye */
+.input_containar__password--active{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 15px;
+    cursor: pointer;
+}
 /* Texto del input */
 label {
   position: absolute;
