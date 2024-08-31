@@ -854,4 +854,69 @@ body {
 
 .visible {
   display: block;
+}
+
+.category {
+  padding: 1.25rem;
+}
+.category__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.category__title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.category__link {
+  font-size: 14px;
+  color: #f2a03d;
+  font-weight: 400;
+  text-decoration: none;
+}
+.category__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.category__card-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.category__card-tasks {
+  font-size: 12px;
+}
+.category__card--personal {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #9dd7bd;
+}
+.category__card--college {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #f26680;
+}
+.category__card--community {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #f2a03d;
+}
+.category__card--others {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #7789f2;
 }/*# sourceMappingURL=main.css.map */

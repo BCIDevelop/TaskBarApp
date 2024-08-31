@@ -1,96 +1,105 @@
-@use './variables' as variables;
+@use "./variables" as variables;
 
 @mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin button-task-styles() {
-    all: unset;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-    font-size: 20px;
-    color: #acacac;
+  all: unset;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  font-size: 20px;
+  color: #acacac;
 }
 @mixin button-hover($hover-color: null) {
-    @if $hover-color {
-        &:hover {
-            color: $hover-color;
-            border-color: $hover-color;
-        }
+  @if $hover-color {
+    &:hover {
+      color: $hover-color;
+      border-color: $hover-color;
     }
+  }
 }
 @mixin cards-container($padding, $gap) {
-    display: flex;
-    flex-direction: column;
-    padding: $padding;
-    gap: $gap;
+  display: flex;
+  flex-direction: column;
+  padding: $padding;
+  gap: $gap;
 }
 @mixin card($border-radius, $padding-y, $padding-x, $box-shadow) {
-    border-top: 4px solid;
-    border-radius: $border-radius;
-    padding: $padding-y $padding-x;
-    box-shadow: $box-shadow;
+  border-top: 4px solid;
+  border-radius: $border-radius;
+  padding: $padding-y $padding-x;
+  box-shadow: $box-shadow;
 }
 @mixin align-items($display, $justify, $align, $margin-top: null) {
-    display: $display;
-    justify-content: $justify;
-    align-items: $align;
-    @if $margin-top {
-        margin-top: $margin-top;
-    }
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+  @if $margin-top {
+    margin-top: $margin-top;
+  }
 }
 @mixin card-details($gap) {
-    display: flex;
-    flex-direction: column;
-    gap: $gap;
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
 }
 @mixin text-styles($margin: 0, $color: null, $font-weight: null) {
-    margin: $margin;
-    @if $color {
-        color: $color;
-    }
-    @if $font-weight {
-        font-weight: $font-weight;
-    }
+  margin: $margin;
+  @if $color {
+    color: $color;
+  }
+  @if $font-weight {
+    font-weight: $font-weight;
+  }
 }
 @mixin tag-styles($bg-color: null, $text-color: null) {
-    @if $bg-color {
-        background-color: $bg-color;
-    }
-    @if $text-color {
-        color: $text-color;
-    }
+  @if $bg-color {
+    background-color: $bg-color;
+  }
+  @if $text-color {
+    color: $text-color;
+  }
 }
 
 @mixin card-variant($border-color) {
-    border-color: $border-color;
+  border-color: $border-color;
 }
 
 @mixin button($options) {
-    $bg-color: map-get($options, "bg-color");
-    $text-color: map-get($options, "text-color");
-    $padding: map-get($options, "padding");
-    $font-size: map-get($options, "font-size");
-    $border: map-get($options, "border");
-    $border-radius: map-get($options, "border-radius");
-    $width: map-get($options, "width");
-    @if $width != null {
-      width: $width;
-    }
-    background-color: $bg-color;
-    color: $text-color;
-    padding: $padding;
-    font-size: $font-size;
-    font-family: variables.$font-family;
-    font-weight: 500;
-    text-align: center;
-    border: $border;
-    border-radius: $border-radius;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    &:hover {
-      background-color: darken($bg-color, 15%);
-    }
+  $bg-color: map-get($options, "bg-color");
+  $text-color: map-get($options, "text-color");
+  $padding: map-get($options, "padding");
+  $font-size: map-get($options, "font-size");
+  $border: map-get($options, "border");
+  $border-radius: map-get($options, "border-radius");
+  $width: map-get($options, "width");
+  @if $width != null {
+    width: $width;
   }
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $padding;
+  font-size: $font-size;
+  font-family: variables.$font-family;
+  font-weight: 500;
+  text-align: center;
+  border: $border;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: darken($bg-color, 15%);
+  }
+}
+
+@mixin category-card($background-color) {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: $background-color;
+}
