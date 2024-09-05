@@ -41,13 +41,20 @@
  
 }
 /* Input password Icon Eye */
-.input_containar__password--active{
+.input_containar__password--active,.input_containar__password--disable{
     position: absolute;
     width: 20px;
     height: 20px;
     right: 15px;
     cursor: pointer;
+    bottom: calc(50% - 10px)
+
 }
+.input_containar__password--disable{
+  display: none;
+}
+/* Wrapper Container input */
+
 /* Texto del input */
 label {
   position: absolute;
@@ -64,7 +71,7 @@ label {
   top: -6.5px;
   font-size: 12px;
   background: transparent;
-  left: 14px !important;
+  left: 20px !important;
 }
 
 .input-container__input:focus + i + .label-email, .animation-input + i + .label-email {
@@ -124,7 +131,7 @@ i::after {
 .input-container span {
   position: absolute;
   right: 5%;
-  top: 21%;
+  top: 30%;
   color: #B30020;
   display: none;
 }
@@ -188,4 +195,9 @@ i::after {
 .input-profile{
   outline: none;
   padding-left: 16px;
+}
+.input-container__icon{
+  height: 16px;
+  width: 16px;
+  filter: invert(8%) sepia(94%) saturate(5962%) hue-rotate(344deg) brightness(94%) contrast(105%);
 }

@@ -55,3 +55,10 @@
     text-decoration: none;
     cursor: pointer;
 }
+.main-container__wrapper{
+    position: absolute;
+    top: 1%;
+    left:0% ;
+    z-index: 4;
+    display: none;
+}
