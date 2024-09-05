@@ -88,8 +88,9 @@ class UsersModel{
             return elementFinded; 
         });
         return usersFinded
-        
     }
+
+    
 
 }
 export default UsersModel
