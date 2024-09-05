@@ -8,10 +8,7 @@ const passwordEyeDisabled = document.getElementsByClassName('input_containar__pa
 const toast = document.querySelector('.main-container__wrapper')
 import users_model from '../models/users.js'
 
-/* Inicializamos el localStorage */
-if (!localStorage.getItem('users')){
-    localStorage.setItem('users',[])
-}
+
 function invalidEffect(index){
     if(label[index].classList.contains('invalid')){
         label[index].classList.remove('invalid')

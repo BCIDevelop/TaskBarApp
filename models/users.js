@@ -46,7 +46,6 @@ class UsersModel{
 
     static findOne(queryObj){
         /* Verificamos la estructura de query object */
-        console.log(queryObj)
         /* Predicate where */
         if(!queryObj.where) throw new Error("Verifica tu query")
         const userCreated = {...queryObj.where}
@@ -63,6 +62,33 @@ class UsersModel{
         } )
         userFinded = userFinded  ? userFinded : null 
         return userFinded
+    }
+
+    static findAll(queryObj){
+        /* Verificamos si tiene o no un queryObj */
+        if(!queryObj){
+            /* Caso no encontramos el predicate debemos devolver todo los registros */
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            return users
+        }
+        if(!queryObj.where) throw new Error("Verifica tu query")
+        /* Caso exista el predicate verificaremos el predicate */
+        if(!this.#verifyUserExists(queryObj.where)) throw new Error("Verifica tus datos")
+        /* Consultamos a la base de datos (localStorage)*/
+        const users = JSON.parse(localStorage.getItem('users') || '[]');
+        const usersFinded = users.filter(element => {
+            const keys = Object.keys(queryObj.where);
+            let elementFinded = true;
+            for (const key of keys) {
+                if (element[key] !== queryObj.where[key]) {
+                    elementFinded = false;
+                    break;
+                }
+            }
+            return elementFinded; 
+        });
+        return usersFinded
+        
     }
 
 }

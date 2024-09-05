@@ -10,6 +10,7 @@ const toast = document.querySelector('.main-container__wrapper')
 import users_model from '../models/users.js'
 import sanitizeInput from '../utils/sanitize.js'
 
+
 function invalidEffect(index){
     if(label[index].classList.contains('invalid')){
         label[index].classList.remove('invalid')
