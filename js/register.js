@@ -8,6 +8,7 @@ const passwordEyeDisabled = document.querySelectorAll('.input_containar__passwor
 const toast = document.querySelector('.main-container__wrapper')
 
 import users_model from '../models/users.js'
+import sanitizeInput from '../utils/sanitize.js'
 
 function invalidEffect(index){
     if(label[index].classList.contains('invalid')){
@@ -29,8 +30,11 @@ form.onsubmit=(e)=>{
        }
     }
     const userData=[]
+    /* Procedemos a sanitizar los inputs */
     inputs.forEach((element)=>{
-        userData.push(element.value)
+        const sanitizedInput = sanitizeInput(element.value)
+        console.log(sanitizedInput)
+        userData.push(sanitizedInput)
     })
     /* Verify password */
     if(userData[1]!=userData[2]) {
@@ -90,3 +94,7 @@ passwordEyeDisabled.forEach((element, index)=>{
         inputPassword.setAttribute('type','password')
     })
 })
+
+function loginGmail(){
+
+}

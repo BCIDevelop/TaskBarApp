@@ -17,7 +17,7 @@
             
                   window.google.accounts.id.initialize({
                     client_id: "867773923360-1o9vafk85bmvsnh2oeebjg7v7ks73us9.apps.googleusercontent.com",
-                    callback: loginGmail()
+                    
                   });
                   
                 }
@@ -26,6 +26,15 @@
         </script> 
     <div class="main_container">
         <div class="main_container__login login_container">
+            <div class="main-container__wrapper">
+                <div class="alert alert--error">
+                    <div class="alert__icon">!</div>
+                    <div class="alert__content">
+                        <h3 class="alert__title">Algo salió mal</h3>
+                        <p class="alert__description">Lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+            </div>
             <div class="register_container__welcome welcome">
                 <h1 class="welcome__heading">Crear una cuenta</h1>
             </div>
