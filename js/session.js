@@ -6,7 +6,7 @@ const errorText=document.querySelectorAll('.text-error')
 const passwordEye =document.getElementsByClassName('input_containar__password--active')
 const passwordEyeDisabled = document.getElementsByClassName('input_containar__password--disable')
 const toast = document.querySelector('.main-container__wrapper')
-import users_model from '../models/users.js'
+import users_model from '../service/user.js'
 
 
 function invalidEffect(index){
@@ -34,7 +34,7 @@ form.onsubmit=(e)=>{
     try {
         const record = users_model.findOne({
             where:{
-                email: userData[0]
+                email: userData[0],
             }
         })
         if(!record) throw new Error("No existe el usuario")

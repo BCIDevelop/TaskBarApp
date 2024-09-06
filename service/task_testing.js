@@ -1,5 +1,55 @@
-import { getList } from "../storage/localStorage.js"
+/* Refacto add storage import */
+import { saveToList,getList } from "../storage/localStorage.js"
+import { Task,taskModel } from "../model/task.js"
 import formatDate from "../utils/formatDate.js"
+const testData = [
+    new Task({
+        ownerId:1,
+        title:"Mi tarea",
+        description:"Una tarea muy dificil",
+        status:"Pendiente",
+        category:"Personal",
+        startDate:formatDate(new Date('2024-10-05')), // '05-10-2024'
+        endDate: formatDate(new Date('2024-10-09')),
+        participants : [],
+      }),
+      new Task({
+        ownerId:1,
+        title:"Mi tarea 2 ",
+        description:"Una tarea muy facil",
+        status:"Pendiente",
+        category:"Grupal",
+        startDate:formatDate(new Date('2024-10-07')), // '05-10-2024'
+        endDate: formatDate(new Date('2024-10-09')),
+        participants : [{
+            userId:2,
+            email:"luis@gmail.com"
+        }],
+      }),
+      new Task({
+        ownerId:2,
+        title:"Mi tarea 2 ",
+        description:"Una tarea muy facil",
+        status:"Completado",
+        category:"Grupal",
+        startDate:formatDate(new Date('2024-10-08')), // '05-10-2024'
+        endDate: formatDate(new Date('2024-10-09')),
+        participants : [{
+            userId:1,
+            email:"admin@gmail.com"
+        },
+        {
+            userId:2,
+            email:"luis@gmail.com"
+        }
+    
+        ],
+      })
+]
+
+
+localStorage.setItem('tasks',JSON.stringify(testData))
+
 
 export const filterTasksByDate = function (userId,dayClicked){
     /* Obtenemos el dia con el formato adecuado*/

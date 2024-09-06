@@ -19,7 +19,7 @@ export class Task {
     this.category = category;
     this.startDate = startDate;
     this.endDate = endDate;
-    this.participants = [ownerId, ...participants];
+    this.participants = participants
   }
 }
 

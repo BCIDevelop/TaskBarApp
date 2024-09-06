@@ -7,7 +7,7 @@ const passwordEye =document.querySelectorAll('.input_containar__password--active
 const passwordEyeDisabled = document.querySelectorAll('.input_containar__password--disable')
 const toast = document.querySelector('.main-container__wrapper')
 
-import users_model from '../models/users.js'
+import users_model from '../service/user.js'
 import sanitizeInput from '../utils/sanitize.js'
 
 
