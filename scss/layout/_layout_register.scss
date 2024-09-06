@@ -1,0 +1,23 @@
+@use '../shared/variables';
+@use '../media-queries';
+.register_container__welcome{
+    display: flex;
+    flex-direction: column;
+    align-self: self-start;
+    align-items: center;
+    gap: 11px;
+}
+.register_container__register{
+    font-size: variables.$fs-small;
+    height: 40px;
+    text-align: center;
+    align-self: center;
+    vertical-align:middle;
+}
+.main_container_forgot{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
