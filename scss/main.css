@@ -841,7 +841,6 @@ html {
   display: none;
 }
 
-<<<<<<< HEAD
 .filter,
 .order {
   position: relative;
@@ -1080,7 +1079,100 @@ html {
 }
 .create-task__submit {
   width: 100%;
-=======
+}
+
+.main_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_container {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 325px;
+  justify-content: center;
+  gap: 19px;
+  align-items: center;
+}
+
+.login_container__welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+}
+
+.welcome__text {
+  font-size: 14px;
+  color: #0A0D14;
+  text-align: center;
+  opacity: 50%;
+}
+
+.welcome__heading {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.login_container__forgot {
+  text-align: center;
+  color: #0A0D14;
+  font-size: small;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.login_container__register {
+  font-size: 12px;
+  height: 40px;
+  text-align: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.register_anchor {
+  color: #ff8142;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.main-container__wrapper {
+  position: absolute;
+  top: 1%;
+  left: 0%;
+  z-index: 4;
+  display: none;
+}
+
+.register_container__welcome {
+  display: flex;
+  flex-direction: column;
+  align-self: self-start;
+  align-items: center;
+  gap: 11px;
+}
+
+.register_container__register {
+  font-size: 12px;
+  height: 40px;
+  text-align: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.main_container_forgot {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 /* Form */
 /* Form Container */
 .form-container {
@@ -1263,99 +1355,4 @@ i::after {
   height: 16px;
   width: 16px;
   filter: invert(8%) sepia(94%) saturate(5962%) hue-rotate(344deg) brightness(94%) contrast(105%);
-}
-
-/* Tablet - 768px */
-/* Small Desktop - 1024px */
-.main_container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login_container {
-  padding-top: 30px;
-  display: flex;
-  flex-direction: column;
-  width: 325px;
-  justify-content: center;
-  gap: 19px;
-  align-items: center;
-}
-
-.login_container__welcome {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 11px;
-}
-
-.welcome__text {
-  font-size: 14px;
-  color: #0A0D14;
-  text-align: center;
-  opacity: 50%;
-}
-
-.welcome__heading {
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.login_container__forgot {
-  text-align: center;
-  color: #0A0D14;
-  font-size: small;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.login_container__register {
-  font-size: 12px;
-  height: 40px;
-  text-align: center;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.register_anchor {
-  color: #ff8142;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.main-container__wrapper {
-  position: absolute;
-  top: 1%;
-  left: 0%;
-  z-index: 4;
-  display: none;
-}
-
-.register_container__welcome {
-  display: flex;
-  flex-direction: column;
-  align-self: self-start;
-  align-items: center;
-  gap: 11px;
-}
-
-.register_container__register {
-  font-size: 12px;
-  height: 40px;
-  text-align: center;
-  align-self: center;
-  vertical-align: middle;
-}
-
-.main_container_forgot {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
->>>>>>> feature/SP-15-Login-View
 }/*# sourceMappingURL=main.css.map */

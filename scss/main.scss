@@ -1,5 +1,4 @@
 // make your imports here
-<<<<<<< HEAD
 @use "./components/card";
 @use "./shared/base";
 @use "./components/buttons";
@@ -14,16 +13,7 @@
 @use "./components/card-category";
 @use "./components/chart";
 @use "./components/modal";
-=======
-@use './components/card';
-@use './shared/base';
-@use './components/buttons';
-@use './components/alerts';
-@use './components/calendar';
-@use './components/menu';
-@use './components/user_card';
-@use './components/search_input';
-@use './components/input_login';
 @use './layout/layout_login';
 @use './layout/layout_register';
->>>>>>> feature/SP-15-Login-View
+@use './components/input_login';
+
