@@ -1067,12 +1067,37 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+@media only screen and (min-width: 28rem) {
+  .create-task__option {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .create-task__option-label {
   margin-left: 0.5rem;
   color: #333;
   font-size: 1rem;
+  text-align: start;
+}
+.create-task__option-input {
+  width: 100%;
+  max-width: 200px;
+  outline: none;
+  padding: 5px;
+  border: 1px solid #bec0c7;
+}
+@media only screen and (min-width: 48rem) {
+  .create-task__option-input {
+    max-width: 220px;
+  }
+}
+.create-task__option-input:focus {
+  border-color: #ff8142;
 }
 .create-task__option-icon {
   font-size: 1.5rem;

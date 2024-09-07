@@ -1,5 +1,6 @@
 @use "../shared/mixin" as m;
 @use "../shared/variables" as v;
+@use "../media-queries" as media;
 
 .create-task {
     background-color: v.$text-clr-light;
@@ -35,7 +36,7 @@
         gap: 0.5rem;
         & label {
             font-size: 0.9rem;
-            color: v.$text-clr-stone;            
+            color: v.$text-clr-stone;
             position: static;
         }
 
@@ -61,12 +62,33 @@
 
     &__option {
         @include m.flex-center;
-        justify-content: space-between;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.4rem;
+        @include media.mobile {
+            flex-direction: row;
+            justify-content: space-between;
+        }
 
         &-label {
             margin-left: 0.5rem;
             color: v.$text-clr-stone;
             font-size: 1rem;
+            text-align: start;
+        }
+        &-input {
+            width: 100%;
+            max-width: 200px;
+            outline: none;
+            padding: 5px;
+            @include media.tablet {
+                max-width: 220px;
+            }
+            border: 1px solid #bec0c7;
+            &:focus {
+                border-color: #ff8142;
+            }
         }
         &-icon {
             font-size: 1.5rem;

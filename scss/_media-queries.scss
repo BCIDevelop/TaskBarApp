@@ -1,22 +1,23 @@
-$size-screen:(
+$size-screen: (
+    mobile: 28rem,
     table: 48rem,
-    desktop:64rem
+    desktop: 64rem,
 );
-
+@mixin mobile {
+    @media only screen and (min-width: map-get($size-screen, mobile)) {
+        @content;
+    }
+}
 /* Tablet - 768px */
 @mixin tablet {
     @media only screen and (min-width: map-get($size-screen, table)) {
-        @content
-        
-    
-    }
-    
-};
-
-/* Small Desktop - 1024px */
-@mixin desktop{
-    @media only screen and (min-width: map-get($size-screen, desktop)) {
-        @content
+        @content;
     }
 }
 
+/* Small Desktop - 1024px */
+@mixin desktop {
+    @media only screen and (min-width: map-get($size-screen, desktop)) {
+        @content;
+    }
+}
