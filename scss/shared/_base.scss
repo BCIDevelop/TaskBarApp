@@ -1,12 +1,19 @@
-@use './variables';
+@use "./variables";
 body {
-    font-family: var(--font-family);
+    font-family: variables.$font-family;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
 }
-
+html {
+    overflow-x: hidden;
+}
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }

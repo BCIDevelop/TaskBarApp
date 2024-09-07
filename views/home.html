@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TaskBar App - Home</title>
+        <link type="text/css" rel="stylesheet" href="../scss/main.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="header__logo">TaskApp</h1>
+            <button class="button__show" id="btn_show-nav">
+                <i class="fa-solid fa-bars bars__picture"></i>
+            </button>
+        </header>
+
+        <div class="overlay" id="nav-overlay"></div>
+        <div class="overlay" id="create-task-overlay">
+            <div class="create-task">
+                <button
+                    id="close-modal-task"
+                    class="close_modal button__task button__task-close"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h2 class="create-task__title">Crear Nueva Tarea</h2>
+                <form class="create-task__form">
+                    <div class="create-task__field">
+                        <label class="create-task__label" for="title"
+                            >Título</label
+                        >
+                        <input
+                            type="text"
+                            id="title"
+                            class="create-task__input"
+                            aria-label="title"
+                            placeholder=""
+                        />
+                    </div>
+                    <div class="create-task__field">
+                        <label class="create-task__label" for="description"
+                            >Descripción</label
+                        >
+                        <textarea
+                            name="description"
+                            id="description"
+                            class="create-task__textarea"
+                            aria-expanded="false"
+                            rows="4"
+                        ></textarea>
+                    </div>
+                    <div class="create-task__options">
+                        <div class="create-task__option">
+                            <label class="create-task__option-label"
+                                ><i
+                                    class="fa-solid fa-tag create-task__option-icon"
+                                ></i>
+
+                                Categoría</label
+                            >
+                            <select
+                                class="create-task__option-input"
+                                name="categoria"
+                                id="categoria"
+                            >
+                                <option value="personal">Personal</option>
+                                <option value="negocios">Negocios</option>
+                                <option value="comunidad">Comunidad</option>
+                                <option value="estudios">Estudios</option>
+                            </select>
+                        </div>
+                        <div class="create-task__option">
+                            <label class="create-task__option-label">
+                                <i
+                                    class="fa-solid fa-square-poll-vertical create-task__option-icon"
+                                ></i>
+                                Estado</label
+                            >
+                            <select
+                                class="create-task__option-input"
+                                name="estado"
+                                id="estado"
+                            >
+                                <option value="pendiente">Pendiente</option>
+                                <option value="enprogreso">En Progreso</option>
+                                <option value="completado">Completado</option>
+                            </select>
+                        </div>
+                        <div class="create-task__option">
+                            <label class="create-task__option-label">
+                                <i
+                                    class="fa-solid fa-calendar-days create-task__option-icon"
+                                ></i>
+                                Fecha Inicio
+                            </label>
+                            <input
+                                class="create-task__option-input"
+                                type="date"
+                                aria-label="Fecha Inicio"
+                            />
+                        </div>
+                        <div class="create-task__option">
+                            <label class="create-task__option-label">
+                                <i
+                                    class="fa-solid fa-calendar-days create-task__option-icon"
+                                ></i>
+                                Fecha Fin</label
+                            >
+                            <input
+                                class="create-task__option-input"
+                                type="date"
+                                aria-label="Fecha Fin"
+                            />
+                        </div>
+                        <div class="create-task__option">
+                            <label class="create-task__option-label">
+                                <i
+                                    class="fa-solid fa-user create-task__option-icon"
+                                ></i>
+                                Responsables
+                            </label>
+                            <button
+                                type="button"
+                                class="button__task button__task-add"
+                            >
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <input
+                        type="submit"
+                        class="btn-submit"
+                        value="Registrar"
+                        aria-label="Registrar"
+                    />
+                </form>
+            </div>
+        </div>
+        <main>
+            <aside class="menu" id="navbar">
+                <button id="btn_close_nav" class="close_modal button__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="user">
+                    <img
+                        src="../scss/assets/image/user-regular.svg"
+                        alt=""
+                        class="user__picture"
+                    />
+                    <p class="user__name">Nombre del usuario</p>
+                    <p class="user__description">Cargo del usuario</p>
+                </div>
+                <ul class="menu__options">
+                    <li class="menu__option abled">
+                        <a href="./home.html">
+                            <img
+                                src="../scss\assets\image\house-solid.svg"
+                                class="menu__icon"
+                            />
+                            Principal</a
+                        >
+                    </li>
+                    <li class="menu__option menu__option--disabled">
+                        <a href="#">
+                            <img
+                                src="../scss\assets\image\file-regular.svg"
+                                class="menu__icon"
+                            />
+                            Categorías</a
+                        >
+                    </li>
+                    <li class="menu__option abled">
+                        <a href="./tasks.html">
+                            <img
+                                src="../scss\assets\image\list-check-solid.svg"
+                                class="menu__icon"
+                            />
+                            Tareas</a
+                        >
+                    </li>
+                    <li class="menu__option menu__option--disabled">
+                        <a href="#">
+                            <img
+                                src="../scss/assets/image/user-regular.svg"
+                                class="menu__icon"
+                            />
+                            Perfil</a
+                        >
+                    </li>
+                </ul>
+            </aside>
+
+            <div class="main-user-card">
+                <div class="user-card__profile">
+                    <img
+                        class="main-user-card-profile__image"
+                        src="../scss/assets/image/user1.svg"
+                        alt="user1"
+                    />
+                    <h2 class="user-card-profile__name">
+                        <span>Buenas tardes </span> Angela Smith
+                    </h2>
+                </div>
+                <i class="main-user-card__icon fa-solid fa-bell"></i>
+            </div>
+
+            <div class="progress__card">
+                <div>
+                    <h2>Progreso</h2>
+                    <p class="progress-date">Fecha</p>
+                    <p class="progress-title">Título de la actividad</p>
+                    <p class="progress-details">descripcion</p>
+                </div>
+                <div class="progress-circle">
+                    <div class="circle">
+                        <span>15%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="category__header">
+                    <h2 class="category__title">Categorias</h2>
+                    <a href="#" class="category__link">Ver Todos</a>
+                </div>
+
+                <div class="category__cards">
+                    <a href="#" class="category__card category__card--personal">
+                        <h3 class="category__card-title">Personal</h3>
+                        <p class="category__card-tasks">8 Task</p>
+                    </a>
+                    <a href="#" class="category__card category__card--college">
+                        <h3 class="category__card-title">Business</h3>
+                        <p class="category__card-tasks">6 Task</p>
+                    </a>
+                    <a
+                        href="#"
+                        class="category__card category__card--community"
+                    >
+                        <h3 class="category__card-title">Community</h3>
+                        <p class="category__card-tasks">8 Task</p>
+                    </a>
+                    <a href="#" class="category__card category__card--others">
+                        <h3 class="category__card-title">Student</h3>
+                        <p class="category__card-tasks">6 Task</p>
+                    </a>
+                </div>
+            </div>
+            <button class="button__createtask" id="btn_create_task">+</button>
+        </main>
+        <script
+            src="https://kit.fontawesome.com/b556484ff9.js"
+            crossorigin="anonymous"
+        ></script>
+        <script type="module" src="../js/index.js"></script>
+    </body>
+</html>

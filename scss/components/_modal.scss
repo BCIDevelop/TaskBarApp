@@ -1,0 +1,101 @@
+@use "../shared/mixin" as m;
+@use "../shared/variables" as v;
+@use "../media-queries" as media;
+
+.create-task {
+    background-color: v.$text-clr-light;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px v.$modal-shadow-color;
+    max-width: 450px;
+    width: 90%;
+    position: relative;
+    margin: 20px auto;
+    .close_modal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.2rem;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        color: v.$text-clr-stone;
+        margin-bottom: 1rem;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        & label {
+            font-size: 0.9rem;
+            color: v.$text-clr-stone;
+            position: static;
+        }
+
+        & input,
+        & textarea {
+            padding: 0.5rem;
+            border: 1px solid v.$text-clr-dark;
+            border-radius: 5px;
+            font-size: 1rem;
+
+            &:focus {
+                border-color: v.$clr-primary;
+                outline: none;
+            }
+        }
+    }
+
+    &__options {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &__option {
+        @include m.flex-center;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.4rem;
+        @include media.mobile {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &-label {
+            margin-left: 0.5rem;
+            color: v.$text-clr-stone;
+            font-size: 1rem;
+            text-align: start;
+        }
+        &-input {
+            width: 100%;
+            max-width: 200px;
+            outline: none;
+            padding: 5px;
+            @include media.tablet {
+                max-width: 220px;
+            }
+            border: 1px solid #bec0c7;
+            &:focus {
+                border-color: #ff8142;
+            }
+        }
+        &-icon {
+            font-size: 1.5rem;
+            color: v.$text-clr-stone;
+        }
+    }
+    &__submit {
+        width: 100%;
+    }
+}

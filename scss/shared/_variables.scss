@@ -1,4 +1,80 @@
+/* Font styles */
+$font-family: "Poppins", system-ui;
+$fs-base: 16px;
+$fs-large:24px;
+$fs-x-small:10px;
+$fs-small: 12px;
+$fs-medium: 14px;
+/* Colors */
+$clr-blue: #0521D8;
+$clr-light:#FFFFFF;
+$clr-primary: #ff8142;
+$clr-warm-pink: #f26680;
+$clr-yellow: #e9da12;
+$clr-yellow-light: #e9e177;
+$clr-yellow-drk: #cfc100;
+$clr-soft-blue: #7789f2;
+$clr-pink: #f97e6e;
+$clr-pink-50: #f97e6e93;
+$clr-pink-dark: #f03f28;
+$clr-orange: #f2a03d;
+$clr-organge-50: #f2a13d73;
+$clr-organge-dark: #e18109;
+$clr-organge-light: #fba63c;
+$clr-cyan: #38bdf2;
+$clr-cyan-50: #38bdf279;
+$clr-cyan-light: #5ebff6;
+$clr-cyan-drk: #08a0f7;
+$clr-green: #40a35e;
+$clr-green-50: #40a35e79;
+$clr-green-light: #9dd7bd;
+$clr-green-drk: #13854e;
+$clr-mint-green: #91d99c;
+$clr-pile-color: #f5f5f5;
+$clr-gray-light: #ccc;
+$clr-black-20: #090f2479;
+$clr-soft-cyan:#F0F5FC;
 
-:root {
-    
-}
+/* Texto Colors */
+$text-clr-orange: #cc6627;
+$text-clr-light: #ffffff;
+$text-clr-darker: #090f24;
+$text-clr-dark: #bec0c7;
+$text-clr-stone: #333;
+/* Spacings */
+$gap-row-tags: 4px;
+$gap-col-login: 19px;
+$gap-col-cards: 12px;
+$gap-col-details: 5px;
+$gap-col-icons: 10px;
+$gap-col-calendar-day: 1rem;
+/* Margins */
+$margin-primary: 33px;
+/* Alerts */
+$clr-alert-error:  #F85640;
+$clr-alert-warning: #FBA63C;
+$clr-alert-success: #34A770;
+$clr-alert-info: #08A0F7;
+/* Paddings */
+$padding-tag: 4px 10px;
+$padding-card-y: 15px;
+$padding-card-x: 20px;
+$padding-card-cont: 20px;
+/* Tamaños */
+$size-icon-card: 18px;
+/* Gaps */
+$gap-container: 20px;
+$gap-details: 5px;
+$gap-buttons: 10px;
+/* Fuentes y Bordes */
+$font-size-tag: 14px;
+$border-radius: 6px;
+$border-radius-tag: 5px;
+$font-weight-date: 500;
+/* Sombra y Colores */
+$box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.19);
+$modal-shadow-color: rgba(0, 0, 0, 0.1);
+/* HOVER */
+$hover-add-color: #4e4e4e;
+$hover-edit-color: #2e9424;
+$hover-delete-color: #b84040;

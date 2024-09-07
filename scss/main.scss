@@ -1,4 +1,19 @@
 // make your imports here
-@use './components/card';
-@use './shared/base';
-@use './components/buttons'
+@use "./components/card";
+@use "./shared/base";
+@use "./components/buttons";
+@use "./components/alerts";
+@use "./components/calendar";
+@use "./components/menu";
+@use "./layout/header";
+@use "./layout/layout";
+@use "./components/user_card";
+@use "./components/search_input";
+@use "./components/filter";
+@use "./components/card-category";
+@use "./components/chart";
+@use "./components/modal";
+@use './layout/layout_login';
+@use './layout/layout_register';
+@use './components/input_login';
+

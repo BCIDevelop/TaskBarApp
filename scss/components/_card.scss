@@ -1,2 +1,105 @@
-@use '../shared/variables';
-@use '../media-queries';
+@use "../shared/mixin" as m;
+@use "../shared/variables" as v;
+
+.cards__container {
+    @include m.cards-container(v.$padding-card-cont, v.$gap-container);
+    &-heading {
+        display: flex;
+        justify-content: space-between;
+        & h2 {
+            margin: 0;
+        }
+    }
+}
+
+.card {
+    @include m.card(
+        v.$border-radius,
+        v.$padding-card-y,
+        v.$padding-card-x,
+        v.$box-shadow
+    );
+
+    &__body {
+        @include m.align-items(flex, space-between, center, 8px);
+    }
+
+    &__details {
+        @include m.card-details(v.$gap-details);
+    }
+
+    &__title {
+        @include m.text-styles(0);
+    }
+
+    &__tag {
+        font-size: v.$font-size-tag;
+        padding: v.$padding-tag;
+        display: inline-block;
+        border-radius: v.$border-radius-tag;
+        &-pending {
+            @include m.tag-styles(v.$clr-pink-50, v.$clr-pink-dark);
+        }
+        &-inprogress {
+            @include m.tag-styles(v.$clr-organge-50, v.$text-clr-orange);
+        }
+        &-complete {
+            @include m.tag-styles(v.$clr-cyan-50, v.$clr-cyan-drk);
+        }
+    }
+
+    &__date {
+        @include m.text-styles(0, v.$clr-gray-light, v.$font-weight-date);
+    }
+
+    &__personal {
+        @include m.card-variant(v.$clr-green);
+    }
+    &__college {
+        @include m.card-variant(v.$clr-warm-pink);
+    }
+
+    &__others {
+        @include m.card-variant(v.$clr-soft-blue);
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: v.$gap-buttons;
+    }
+}
+
+.progress__card {
+    width: 95%;
+    margin: 20px auto 0;
+    padding: 20px;
+    border: 1px solid v.$text-clr-dark;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.progress {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: v.$text-clr-light;
+    border-radius: 5px;
+}
+
+.progress-date {
+    color: v.$text-clr-dark;
+}
+
+.progress-title {
+    color: v.$text-clr-darker;
+    font-weight: bold;
+}
+
+.progress-details {
+    color: v.$text-clr-dark;
+}

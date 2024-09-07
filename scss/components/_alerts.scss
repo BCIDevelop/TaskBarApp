@@ -1,0 +1,59 @@
+@use "../shared/variables" as variables;
+
+@mixin alert($primary-color, $lighten-percent, $width, $padding) {
+  background-color: lighten($primary-color, $lighten-percent);
+  color: $primary-color;
+  width: $width;
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  padding: $padding;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  .alert__icon {
+    background-color: $primary-color;
+    border-radius: 50%;
+    color: variables.$text-clr-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 18px;
+  }
+
+  .alert__content {
+    width: 90%;
+  }
+
+  .alert__title {
+    font-size: variables.$fs-base;
+  }
+
+  .alert__description {
+    text-align: justify;
+    font-size: variables.$fs-small;
+  }
+}
+
+.alert {
+  $padding-alert: 0.5rem 1rem;
+
+  &--error {
+    @include alert(variables.$clr-alert-error, 35%, 25rem, $padding-alert);
+  }
+
+  &--warning {
+    @include alert(variables.$clr-alert-warning, 35%, 25rem, $padding-alert);
+  }
+
+  &--success {
+    @include alert(variables.$clr-alert-success, 50%, 25rem, $padding-alert);
+  }
+
+  &--info {
+    @include alert(variables.$clr-alert-info, 45%, 25rem, $padding-alert);
+  }
+}

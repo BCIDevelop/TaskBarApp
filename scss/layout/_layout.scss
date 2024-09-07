@@ -1,2 +1,20 @@
-@use '../shared/variables';
-@use '../media-queries';
+@use "../shared/variables" as variables;
+@use "../media-queries";
+
+.overlay {
+    background-color: variables.$clr-black-20;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
+}
+.overlay-show {
+    opacity: 100%;
+    display: block;
+}
