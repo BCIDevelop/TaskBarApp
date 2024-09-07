@@ -1,3 +1,5 @@
+import { createTask } from "./createTask.js";
+
 document.addEventListener("DOMContentLoaded", function () {
     const taskOverlay = document.getElementById("create-task-overlay");
     const closeModalButton = document.getElementById("close-modal-task");
@@ -47,3 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
         taskOverlay.classList.remove("overlay-show");
     });
 });
+
+const buttoncreatetask = document.querySelector(".button__createtask");
+
+buttoncreatetask.addEventListener("click", function() {
+  document.getElementById("create-task-overlay").classList.add("overlay-show");
+})
+
+
+function creatingTask() {
+  document.querySelector(".btn-submit").addEventListener("submit", createTask());
+}
