@@ -1,39 +1,47 @@
-const title = document.getElementById("title");
-const description = document.getElementById("description");
-const categoria = document.getElementById("categoria");
-const estado = document.getElementById("estado");
-const fechainicio = document.getElementById("fechainicio");
-const fechafin = document.getElementById("fechafin");
+import { Task } from "../model/task.js";
+import { getList, setList } from "../storage/localStorage.js";
+const titleInput = document.getElementById("title");
+const descriptionInput = document.getElementById("description");
+const categoriaSelect = document.getElementById("categoria");
+const estadoSelect = document.getElementById("estado");
+const fechainicioInput = document.getElementById("fechainicio");
+const fechafinInput = document.getElementById("fechafin");
 const submitbutton = document.querySelector(".btn-submit");
 
-class Task {
-  constructor(title, description, categoria, estado, fechainicio, fechafin) {
-    this.title = title;
-    this.description = description;
-    this.categoria = categoria;
-    this.estado = estado;
-    this.fechainicio = fechainicio;
-    this.fechafin = fechafin;
-  }
-}
-
+const clearInputs = () => {
+    titleInput.value = "";
+    descriptionInput.value = "";
+    categoriaSelect.value = "personal";
+    estadoSelect.value = "pendiente";
+    fechainicioInput.value = "";
+    fechafinInput.value = "";
+};
 export const createTask = () => {
-  let titlevalue = title.value;
-  let descriptionvalue = description.value;
-  let categoriavalue = categoria.value;
-  let estadovalue = estado.value;
-  let fechainiciovalue = fechainicio.value;
-  let fechafinvalue = fechafin.value;
-  let newTask = new Task(titlevalue, descriptionvalue, categoriavalue, estadovalue, fechainiciovalue, fechafinvalue);
+    let ownerId = 1;
+    let title = titleInput.value;
+    let description = descriptionInput.value;
+    let status = estadoSelect.value;
+    let category = categoriaSelect.value;
+    let startDate = fechainicioInput.value;
+    let endDate = fechafinInput.value;
+    let newTask = new Task({
+        ownerId,
+        title,
+        description,
+        status,
+        category,
+        startDate,
+        endDate,
+    });
 
-  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    let tasks = getList("tasks");
 
-  tasks.push(newTask);
-
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+    tasks.push(newTask);
+    setList("tasks", tasks);
 };
 
 submitbutton.addEventListener("click", (event) => {
-  event.preventDefault();
-  createTask();
+    event.preventDefault();
+    createTask();
+    clearInputs();
 });
