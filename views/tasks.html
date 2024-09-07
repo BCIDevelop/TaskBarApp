@@ -21,13 +21,12 @@
         </header>
 
         <div class="overlay" id="nav-overlay" onclick="closeNavBar()"></div>
-        <div
-            class="overlay"
-            id="create-task-overlay"
-            onclick="closeCreateTask()"
-        >
+        <div class="overlay" id="create-task-overlay">
             <div class="create-task">
-                <button class="close_modal button__task button__task-close">
+                <button
+                    id="close-modal-task"
+                    class="close_modal button__task button__task-close"
+                >
                     <i class="fa-solid fa-xmark"></i>
                 </button>
                 <h2 class="create-task__title">Crear Nueva Tarea</h2>

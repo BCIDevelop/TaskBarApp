@@ -56,14 +56,16 @@
 /* Wrapper Container input */
 
 /* Texto del input */
-label {
-  position: absolute;
-  left: 5%;
-  font-size: 16px;
-  color: #979797;
-  transition: 0.5s;
-  top: 18px;
-  pointer-events: none;
+.input-container {
+        & label {
+    position: absolute;
+    left: 5%;
+    font-size: 16px;
+    color: #979797;
+    transition: 0.5s;
+    top: 18px;
+    pointer-events: none;
+    }
 }
 
 /* Focus al input y cambia el texto (Label) + valid*/

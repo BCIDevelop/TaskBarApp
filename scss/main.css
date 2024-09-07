@@ -1046,6 +1046,7 @@ html {
 .create-task__field label {
   font-size: 0.9rem;
   color: #333;
+  position: static;
 }
 .create-task__field input, .create-task__field textarea {
   padding: 0.5rem;
@@ -1230,7 +1231,7 @@ html {
 
 /* Wrapper Container input */
 /* Texto del input */
-label {
+.input-container label {
   position: absolute;
   left: 5%;
   font-size: 16px;

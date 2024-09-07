@@ -35,7 +35,8 @@
         gap: 0.5rem;
         & label {
             font-size: 0.9rem;
-            color: v.$text-clr-stone;
+            color: v.$text-clr-stone;            
+            position: static;
         }
 
         & input,

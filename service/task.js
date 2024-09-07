@@ -38,3 +38,20 @@ export const listTasks = function (userId,options){
 
     return tasksFinded
 }
+export function remove(taskId) {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const updatedTasks = tasks.filter(task => task.id !== taskId);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  }
+
+export function update(updatedTask) {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const updatedTasks = tasks.map(task => {
+      if (task.id === updatedTask.id) {
+        return { ...task, ...updatedTask }; 
+      }
+      return task;
+    });
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  }
+
