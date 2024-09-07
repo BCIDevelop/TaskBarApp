@@ -12,9 +12,3 @@ export function getSingleObject(key) {
     return JSON.parse(localStorage.getItem(key));
 }
 
-export function getList(key) {
-    return JSON.parse(localStorage.getItem(key)) || [];
-}
-export function setList(key,list){
-    localStorage.setItem(key,JSON.stringify(list));
-}

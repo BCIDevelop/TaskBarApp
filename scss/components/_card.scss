@@ -1,7 +1,7 @@
 @use "../shared/mixin" as m;
 @use "../shared/variables" as v;
 
-.cards__container {
+.cards__container{
   @include m.cards-container(v.$padding-card-cont, v.$gap-container);
   &-heading {
     display: flex;
@@ -10,8 +10,14 @@
       margin: 0;
     }
   }
-}
+  padding:30px  20px 65px;
 
+}
+#cards__container-wrapper{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
 .card {
   @include m.card(
     v.$border-radius,
@@ -87,7 +93,7 @@
     @include m.card-variant(v.$clr-cyan);
   }
 
-  &__comunity {
+  &__community{
     @include m.card-variant(v.$clr-warm-pink);
   }
 

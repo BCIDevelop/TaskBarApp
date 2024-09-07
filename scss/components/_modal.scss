@@ -2,7 +2,7 @@
 @use "../shared/variables" as v;
 @use "../media-queries" as media;
 
-.create-task {
+.modal-task {
     background-color: v.$text-clr-light;
     padding: 1.5rem;
     border-radius: 8px;
@@ -17,13 +17,44 @@
         right: 10px;
         font-size: 1.2rem;
     }
+    &__buttons {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+    & .btn-cancelar {
+        background-color: v.$clr-cyan-light;
 
+        &:hover {
+            background-color: v.$clr-cyan-drk;
+        }
+    }
+    & .btn-submit {
+        background-color: v.$clr-primary;
+        &:hover {
+            background-color: v.$text-clr-orange;
+        }
+    }
+    & .btn-cancelar,
+    & .btn-submit {
+        color: black;
+        font-size: 15px;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+        padding: 8px 12px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
     &__title {
         font-size: 1.5rem;
         color: v.$text-clr-stone;
         margin-bottom: 1rem;
+        text-align: center;
     }
-
+    &__quest {
+        text-align: center;
+    }
     &__form {
         display: flex;
         flex-direction: column;
@@ -77,6 +108,7 @@
             font-size: 1rem;
             text-align: start;
         }
+
         &-input {
             width: 100%;
             max-width: 200px;

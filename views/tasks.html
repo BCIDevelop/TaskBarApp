@@ -23,108 +23,110 @@
 
         <div class="overlay" id="nav-overlay"></div>
         <div class="overlay" id="create-task-overlay">
-            <div class="create-task">
+            <div class="modal-task">
                 <button
                     id="close-modal-task"
                     class="close_modal button__task button__task-close"
                 >
                     <i class="fa-solid fa-xmark"></i>
                 </button>
-                <h2 class="create-task__title">Crear Nueva Tarea</h2>
-                <form class="create-task__form">
-                    <div class="create-task__field">
-                        <label class="create-task__label" for="title"
+                <h2 class="modal-task__title">Crear Nueva Tarea</h2>
+                <form class="modal-task__form">
+                    <input id="id_task" type="hidden" value="" />
+                    <div class="modal-task__field">
+                        <label class="modal-task__label" for="title"
                             >Título</label
                         >
                         <input
                             type="text"
                             id="title"
-                            class="create-task__input"
+                            class="modal-task__input"
                             aria-label="title"
                             placeholder=""
                         />
                     </div>
-                    <div class="create-task__field">
-                        <label class="create-task__label" for="description"
+                    <div class="modal-task__field">
+                        <label class="modal-task__label" for="description"
                             >Descripción</label
                         >
                         <textarea
                             name="description"
                             id="description"
-                            class="create-task__textarea"
+                            class="modal-task__textarea"
                             aria-expanded="false"
                             rows="4"
                         ></textarea>
                     </div>
-                    <div class="create-task__options">
-                        <div class="create-task__option">
-                            <label class="create-task__option-label"
+                    <div class="modal-task__options">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label"
                                 ><i
-                                    class="fa-solid fa-tag create-task__option-icon"
+                                    class="fa-solid fa-tag modal-task__option-icon"
                                 ></i>
 
                                 Categoría</label
                             >
                             <select
-                                class="create-task__option-input"
+                                class="modal-task__option-input"
                                 name="categoria"
                                 id="categoria"
                             >
                                 <option value="personal">Personal</option>
-                                <option value="negocios">Negocios</option>
-                                <option value="comunidad">Comunidad</option>
-                                <option value="estudios">Estudios</option>
+                                <option value="work">Trabajo</option>
+                                <option value="studies">Estudios</option>
+                                <option value="community">Comunidad</option>
+                                <option value="others">Otros</option>
                             </select>
                         </div>
-                        <div class="create-task__option">
-                            <label class="create-task__option-label">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label">
                                 <i
-                                    class="fa-solid fa-square-poll-vertical create-task__option-icon"
+                                    class="fa-solid fa-square-poll-vertical modal-task__option-icon"
                                 ></i>
                                 Estado</label
                             >
                             <select
-                                class="create-task__option-input"
+                                class="modal-task__option-input"
                                 name="estado"
                                 id="estado"
                             >
-                                <option value="pendiente">Pendiente</option>
-                                <option value="enprogreso">En Progreso</option>
-                                <option value="completado">Completado</option>
+                                <option value="pending">Pendiente</option>
+                                <option value="in_progress">En Progreso</option>
+                                <option value="completed">Completado</option>
                             </select>
                         </div>
-                        <div class="create-task__option">
-                            <label class="create-task__option-label">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label">
                                 <i
-                                    class="fa-solid fa-calendar-days create-task__option-icon"
+                                    class="fa-solid fa-calendar-days modal-task__option-icon"
                                 ></i>
                                 Fecha Inicio
                             </label>
                             <input
-                                class="create-task__option-input"
+                                class="modal-task__option-input"
                                 type="date"
                                 id="fechainicio"
                                 aria-label="Fecha Inicio"
                             />
                         </div>
-                        <div class="create-task__option">
-                            <label class="create-task__option-label">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label">
                                 <i
-                                    class="fa-solid fa-calendar-days create-task__option-icon"
+                                    class="fa-solid fa-calendar-days modal-task__option-icon"
                                 ></i>
                                 Fecha Fin</label
                             >
                             <input
-                                class="create-task__option-input"
+                                class="modal-task__option-input"
                                 type="date"
                                 id="fechafin"
                                 aria-label="Fecha Fin"
                             />
                         </div>
-                        <div class="create-task__option">
-                            <label class="create-task__option-label">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label">
                                 <i
-                                    class="fa-solid fa-user create-task__option-icon"
+                                    class="fa-solid fa-user modal-task__option-icon"
                                 ></i>
                                 Responsables
                             </label>
@@ -139,9 +141,42 @@
                     <input
                         type="submit"
                         class="btn-submit"
+                        id="modal-submit"
                         value="Registrar"
                         aria-label="Registrar"
                     />
+                </form>
+            </div>
+        </div>
+
+        <div class="overlay" id="delete-task-overlay">
+            <div class="modal-task">
+                <button
+                    id="close-modal-delete"
+                    class="close_modal button__task button__task-close"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h2 class="modal-task__title">Eliminar Tarea</h2>
+                <form class="modal-task__form">
+                    <input id="id_task_delete" type="hidden" value="" />
+                    <label class="modal-task__quest">
+                        ¿ Estas seguro de eliminar esta tarea ?
+                    </label>
+                    <div class="modal-task__buttons">
+                        <input
+                            id="cancel-modal-delete"
+                            type="button"
+                            class="btn-cancelar"
+                            value="Cancelar"
+                        />
+                        <input
+                            type="submit"
+                            id="delete-task-button"
+                            class="btn-submit"
+                            value="Eliminar"
+                        />
+                    </div>
                 </form>
             </div>
         </div>
