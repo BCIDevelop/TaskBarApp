@@ -38,50 +38,85 @@
                     <textarea name="description" id="description" class="create-task__textarea" aria-expanded="false"
                         rows="4"></textarea>
                 </div>
-                <div class="create-task__options">
-                    <div class="create-task__option">
-                        <label class="create-task__option-label"><i
-                                class="fa-solid fa-tag create-task__option-icon"></i>
+                    <div class="create-task__options">
+                        <div class="create-task__option">
+                            <label class="create-task__option-label"
+                                ><i
+                                    class="fa-solid fa-tag create-task__option-icon"
+                                ></i>
 
-                            Categoría</label>
-                        <select class="create-task__option-input" name="categoria" id="categoria">
-                            <option value="personal">Personal</option>
-                            <option value="negocios">Negocios</option>
-                            <option value="comunidad">Comunidad</option>
-                            <option value="estudios">Estudios</option>
-                        </select>
-                    </div>
-                    <div class="create-task__option">
-                        <label class="create-task__option-label">
-                            <i class="fa-solid fa-square-poll-vertical create-task__option-icon"></i>
-                            Estado</label>
-                        <select class="create-task__option-input" name="estado" id="estado">
-                            <option value="pendiente">Pendiente</option>
-                            <option value="enprogreso">En Progreso</option>
-                            <option value="completado">Completado</option>
-                        </select>
-                    </div>
-                    <div class="create-task__option">
-                        <label class="create-task__option-label">
-                            <i class="fa-solid fa-calendar-days create-task__option-icon"></i>
-                            Fecha Inicio
-                        </label>
-                        <input class="create-task__option-input" type="date" aria-label="Fecha Inicio" />
-                    </div>
-                    <div class="create-task__option">
-                        <label class="create-task__option-label">
-                            <i class="fa-solid fa-calendar-days create-task__option-icon"></i>
-                            Fecha Fin</label>
-                        <input class="create-task__option-input" type="date" aria-label="Fecha Fin" />
-                    </div>
-                    <div class="create-task__option">
-                        <label class="create-task__option-label">
-                            <i class="fa-solid fa-user create-task__option-icon"></i>
-                            Responsables
-                        </label>
-                        <button type="button" class="button__task button__task-add">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
+                                Categoría</label
+                            >
+                            <select
+                                class="create-task__option-input"
+                                name="categoria"
+                                id="categoria"
+                            >
+                                <option value="personal">Personal</option>
+                                <option value="negocios">Negocios</option>
+                                <option value="comunidad">Comunidad</option>
+                                <option value="estudios">Estudios</option>
+                            </select>
+                        </div>
+                        <div class="create-task__option">
+                            <label class="create-task__option-label">
+                                <i
+                                    class="fa-solid fa-square-poll-vertical create-task__option-icon"
+                                ></i>
+                                Estado</label
+                            >
+                            <select
+                                class="create-task__option-input"
+                                name="estado"
+                                id="estado"
+                            >
+                                <option value="pendiente">Pendiente</option>
+                                <option value="enprogreso">En Progreso</option>
+                                <option value="completado">Completado</option>
+                            </select>
+                        </div>
+                        <div class="create-task__option">
+                            <label class="create-task__option-label">
+                                <i
+                                    class="fa-solid fa-calendar-days create-task__option-icon"
+                                ></i>
+                                Fecha Inicio
+                            </label>
+                            <input
+                                class="create-task__option-input"
+                                type="date"
+                                id="fechainicio"
+                                aria-label="Fecha Inicio"
+                            />
+                        </div>
+                        <div class="create-task__option">
+                            <label class="create-task__option-label">
+                                <i
+                                    class="fa-solid fa-calendar-days create-task__option-icon"
+                                ></i>
+                                Fecha Fin</label
+                            >
+                            <input
+                                class="create-task__option-input"
+                                type="date"
+                                id="fechafin"
+                                aria-label="Fecha Fin"
+                            />
+                        </div>
+                        <div class="create-task__option">
+                            <label class="create-task__option-label">
+                                <i
+                                    class="fa-solid fa-user create-task__option-icon"
+                                ></i>
+                                Responsables
+                            </label>
+                            <button
+                                type="button"
+                                class="button__task button__task-add"
+                            >
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <input type="submit" class="btn-submit" value="Registrar" aria-label="Registrar" />

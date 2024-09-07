@@ -1,5 +1,7 @@
+import { createTask } from "./createTask.js";
 import { filterTasks } from "../service/task.js";
 import { getSelectedFilters, renderTasks, showTasks } from "./task.js";
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const taskOverlay = document.getElementById("create-task-overlay");
@@ -51,6 +53,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+const buttoncreatetask = document.querySelector(".button__createtask");
+
+buttoncreatetask.addEventListener("click", function() {
+  document.getElementById("create-task-overlay").classList.add("overlay-show");
+})
+
+
+function creatingTask() {
+  document.querySelector(".btn-submit").addEventListener("submit", createTask());
+}
+
 // FILTER TASK
 document
   .querySelectorAll('input[name="task-category"], input[name="task-status"]')
@@ -65,3 +79,4 @@ document
 
 // LOAD TASK 
 showTasks()
+
