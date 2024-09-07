@@ -51,17 +51,37 @@
   display: inline-block;
   border-radius: 5px;
 }
-.card__tag-pending {
+.card__tag-status--pending {
   background-color: rgba(249, 126, 110, 0.5764705882);
   color: #f03f28;
 }
-.card__tag-inprogress {
+.card__tag-status--in_progress {
   background-color: rgba(242, 161, 61, 0.4509803922);
   color: #cc6627;
 }
-.card__tag-complete {
-  background-color: rgba(56, 189, 242, 0.4745098039);
-  color: #08a0f7;
+.card__tag-status--completed {
+  background-color: #9ab2ee;
+  color: #0521D8;
+}
+.card__tag-category--personal {
+  background-color: #40a35e;
+  color: #ffffff;
+}
+.card__tag-category--work {
+  background-color: #7789f2;
+  color: #ffffff;
+}
+.card__tag-category--studies {
+  background-color: #38bdf2;
+  color: #ffffff;
+}
+.card__tag-category--community {
+  background-color: #f26680;
+  color: #ffffff;
+}
+.card__tag-category--others {
+  background-color: #f2a03d;
+  color: #ffffff;
 }
 .card__date {
   margin: 0;
@@ -71,11 +91,17 @@
 .card__personal {
   border-color: #40a35e;
 }
-.card__college {
+.card__work {
+  border-color: #7789f2;
+}
+.card__studies {
+  border-color: #38bdf2;
+}
+.card__comunity {
   border-color: #f26680;
 }
 .card__others {
-  border-color: #7789f2;
+  border-color: #f2a03d;
 }
 .card__buttons {
   display: flex;
@@ -861,17 +887,23 @@ html {
   right: -15px;
 }
 .filters-container .filter-category,
+.filters-container .filter-status,
 .filters-container .order-category,
 .orderby-container .filter-category,
+.orderby-container .filter-status,
 .orderby-container .order-category {
   margin-bottom: 15px;
 }
 .filters-container .filter-category .filter-title,
 .filters-container .filter-category .order-title,
+.filters-container .filter-status .filter-title,
+.filters-container .filter-status .order-title,
 .filters-container .order-category .filter-title,
 .filters-container .order-category .order-title,
 .orderby-container .filter-category .filter-title,
 .orderby-container .filter-category .order-title,
+.orderby-container .filter-status .filter-title,
+.orderby-container .filter-status .order-title,
 .orderby-container .order-category .filter-title,
 .orderby-container .order-category .order-title {
   background: none;
@@ -886,10 +918,14 @@ html {
 }
 .filters-container .filter-category .filter-content,
 .filters-container .filter-category .order-content,
+.filters-container .filter-status .filter-content,
+.filters-container .filter-status .order-content,
 .filters-container .order-category .filter-content,
 .filters-container .order-category .order-content,
 .orderby-container .filter-category .filter-content,
 .orderby-container .filter-category .order-content,
+.orderby-container .filter-status .filter-content,
+.orderby-container .filter-status .order-content,
 .orderby-container .order-category .filter-content,
 .orderby-container .order-category .order-content {
   display: none;
@@ -897,20 +933,28 @@ html {
 }
 .filters-container .filter-category .filter-content.show,
 .filters-container .filter-category .order-content.show,
+.filters-container .filter-status .filter-content.show,
+.filters-container .filter-status .order-content.show,
 .filters-container .order-category .filter-content.show,
 .filters-container .order-category .order-content.show,
 .orderby-container .filter-category .filter-content.show,
 .orderby-container .filter-category .order-content.show,
+.orderby-container .filter-status .filter-content.show,
+.orderby-container .filter-status .order-content.show,
 .orderby-container .order-category .filter-content.show,
 .orderby-container .order-category .order-content.show {
   display: block;
 }
 .filters-container .filter-category .filter-content label,
 .filters-container .filter-category .order-content label,
+.filters-container .filter-status .filter-content label,
+.filters-container .filter-status .order-content label,
 .filters-container .order-category .filter-content label,
 .filters-container .order-category .order-content label,
 .orderby-container .filter-category .filter-content label,
 .orderby-container .filter-category .order-content label,
+.orderby-container .filter-status .filter-content label,
+.orderby-container .filter-status .order-content label,
 .orderby-container .order-category .filter-content label,
 .orderby-container .order-category .order-content label {
   display: block;
