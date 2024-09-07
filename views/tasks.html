@@ -1,402 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TaskBar App - Home</title>
-        <link type="text/css" rel="stylesheet" href="../scss/main.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <header class="header">
-            <h1 class="header__logo">TaskApp</h1>
-            <button class="button__show" id="btn_show-nav">
-                <i class="fa-solid fa-bars bars__picture"></i>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskBar App - Home</title>
+    <link type="text/css" rel="stylesheet" href="../scss/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__logo">TaskApp</h1>
+        <button class="button__show" id="btn_show-nav">
+            <i class="fa-solid fa-bars bars__picture"></i>
+        </button>
+    </header>
+
+    <div class="overlay" id="nav-overlay"></div>
+    <div class="overlay" id="create-task-overlay">
+        <div class="create-task">
+            <button id="close-modal-task" class="close_modal button__task button__task-close">
+                <i class="fa-solid fa-xmark"></i>
             </button>
-        </header>
+            <h2 class="create-task__title">Crear Nueva Tarea</h2>
+            <form class="create-task__form">
+                <div class="create-task__field">
+                    <label class="create-task__label" for="title">Título</label>
+                    <input type="text" id="title" class="create-task__input" aria-label="title" placeholder="" />
+                </div>
+                <div class="create-task__field">
+                    <label class="create-task__label" for="description">Descripción</label>
+                    <textarea name="description" id="description" class="create-task__textarea" aria-expanded="false"
+                        rows="4"></textarea>
+                </div>
+                <div class="create-task__options">
+                    <div class="create-task__option">
+                        <label class="create-task__option-label"><i
+                                class="fa-solid fa-tag create-task__option-icon"></i>
 
-        <div class="overlay" id="nav-overlay"></div>
-        <div class="overlay" id="create-task-overlay">
-            <div class="create-task">
-                <button
-                    id="close-modal-task"
-                    class="close_modal button__task button__task-close"
-                >
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <h2 class="create-task__title">Crear Nueva Tarea</h2>
-                <form class="create-task__form">
-                    <div class="create-task__field">
-                        <label class="create-task__label" for="title"
-                            >Título</label
-                        >
-                        <input
-                            type="text"
-                            id="title"
-                            class="create-task__input"
-                            aria-label="title"
-                            placeholder=""
-                        />
+                            Categoría</label>
+                        <select class="create-task__option-input" name="categoria" id="categoria">
+                            <option value="personal">Personal</option>
+                            <option value="negocios">Negocios</option>
+                            <option value="comunidad">Comunidad</option>
+                            <option value="estudios">Estudios</option>
+                        </select>
                     </div>
-                    <div class="create-task__field">
-                        <label class="create-task__label" for="description"
-                            >Descripción</label
-                        >
-                        <textarea
-                            name="description"
-                            id="description"
-                            class="create-task__textarea"
-                            aria-expanded="false"
-                            rows="4"
-                        ></textarea>
+                    <div class="create-task__option">
+                        <label class="create-task__option-label">
+                            <i class="fa-solid fa-square-poll-vertical create-task__option-icon"></i>
+                            Estado</label>
+                        <select class="create-task__option-input" name="estado" id="estado">
+                            <option value="pendiente">Pendiente</option>
+                            <option value="enprogreso">En Progreso</option>
+                            <option value="completado">Completado</option>
+                        </select>
                     </div>
-                    <div class="create-task__options">
-                        <div class="create-task__option">
-                            <label class="create-task__option-label"
-                                ><i
-                                    class="fa-solid fa-tag create-task__option-icon"
-                                ></i>
-
-                                Categoría</label
-                            >
-                            <select
-                                class="create-task__option-input"
-                                name="categoria"
-                                id="categoria"
-                            >
-                                <option value="personal">Personal</option>
-                                <option value="negocios">Negocios</option>
-                                <option value="comunidad">Comunidad</option>
-                                <option value="estudios">Estudios</option>
-                            </select>
-                        </div>
-                        <div class="create-task__option">
-                            <label class="create-task__option-label">
-                                <i
-                                    class="fa-solid fa-square-poll-vertical create-task__option-icon"
-                                ></i>
-                                Estado</label
-                            >
-                            <select
-                                class="create-task__option-input"
-                                name="estado"
-                                id="estado"
-                            >
-                                <option value="pendiente">Pendiente</option>
-                                <option value="enprogreso">En Progreso</option>
-                                <option value="completado">Completado</option>
-                            </select>
-                        </div>
-                        <div class="create-task__option">
-                            <label class="create-task__option-label">
-                                <i
-                                    class="fa-solid fa-calendar-days create-task__option-icon"
-                                ></i>
-                                Fecha Inicio
-                            </label>
-                            <input
-                                class="create-task__option-input"
-                                type="date"
-                                aria-label="Fecha Inicio"
-                            />
-                        </div>
-                        <div class="create-task__option">
-                            <label class="create-task__option-label">
-                                <i
-                                    class="fa-solid fa-calendar-days create-task__option-icon"
-                                ></i>
-                                Fecha Fin</label
-                            >
-                            <input
-                                class="create-task__option-input"
-                                type="date"
-                                aria-label="Fecha Fin"
-                            />
-                        </div>
-                        <div class="create-task__option">
-                            <label class="create-task__option-label">
-                                <i
-                                    class="fa-solid fa-user create-task__option-icon"
-                                ></i>
-                                Responsables
-                            </label>
-                            <button
-                                type="button"
-                                class="button__task button__task-add"
-                            >
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-                        </div>
+                    <div class="create-task__option">
+                        <label class="create-task__option-label">
+                            <i class="fa-solid fa-calendar-days create-task__option-icon"></i>
+                            Fecha Inicio
+                        </label>
+                        <input class="create-task__option-input" type="date" aria-label="Fecha Inicio" />
                     </div>
-                    <input
-                        type="submit"
-                        class="btn-submit"
-                        value="Registrar"
-                        aria-label="Registrar"
-                    />
-                </form>
+                    <div class="create-task__option">
+                        <label class="create-task__option-label">
+                            <i class="fa-solid fa-calendar-days create-task__option-icon"></i>
+                            Fecha Fin</label>
+                        <input class="create-task__option-input" type="date" aria-label="Fecha Fin" />
+                    </div>
+                    <div class="create-task__option">
+                        <label class="create-task__option-label">
+                            <i class="fa-solid fa-user create-task__option-icon"></i>
+                            Responsables
+                        </label>
+                        <button type="button" class="button__task button__task-add">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <input type="submit" class="btn-submit" value="Registrar" aria-label="Registrar" />
+            </form>
+        </div>
+    </div>
+    <main>
+        <aside class="menu" id="navbar">
+            <button id="btn_close_nav" class="close_modal button__close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="user">
+                <img src="../scss/assets/image/user-regular.svg" alt="" class="user__picture" />
+                <p class="user__name">Nombre del usuario</p>
+                <p class="user__description">Cargo del usuario</p>
+            </div>
+            <ul class="menu__options">
+                <li class="menu__option abled">
+                    <a href="./home.html">
+                        <img src="../scss\assets\image\house-solid.svg" class="menu__icon" />
+                        Principal</a>
+                </li>
+                <li class="menu__option menu__option--disabled">
+                    <a href="#">
+                        <img src="../scss\assets\image\file-regular.svg" class="menu__icon" />
+                        Categorías</a>
+                </li>
+                <li class="menu__option abled">
+                    <a href="./tasks.html">
+                        <img src="../scss\assets\image\list-check-solid.svg" class="menu__icon" />
+                        Tareas</a>
+                </li>
+                <li class="menu__option menu__option--disabled">
+                    <a href="#">
+                        <img src="../scss/assets/image/user-regular.svg" class="menu__icon" />
+                        Perfil</a>
+                </li>
+            </ul>
+        </aside>
+        <div class="search_input_container">
+            <input type="search" class="search_input_container__search_input" />
+            <div class="search_input__wrapper search_container">
+                <svg class="search_container__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                        d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6 .1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" />
+                </svg>
+                <p class="search_container__text">Buscar Tarea</p>
             </div>
         </div>
-        <main>
-            <aside class="menu" id="navbar">
-                <button
-                    id="btn_close_nav"
-                    class="close_modal button__close"
-                >
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <div class="user">
-                    <img
-                        src="../scss/assets/image/user-regular.svg"
-                        alt=""
-                        class="user__picture"
-                    />
-                    <p class="user__name">Nombre del usuario</p>
-                    <p class="user__description">Cargo del usuario</p>
-                </div>
-                <ul class="menu__options">
-                    <li class="menu__option abled">
-                        <a href="./home.html">
-                            <img
-                                src="../scss\assets\image\house-solid.svg"
-                                class="menu__icon"
-                            />
-                            Principal</a
-                        >
-                    </li>
-                    <li class="menu__option menu__option--disabled">
-                        <a href="#">
-                            <img
-                                src="../scss\assets\image\file-regular.svg"
-                                class="menu__icon"
-                            />
-                            Categorías</a
-                        >
-                    </li>
-                    <li class="menu__option abled">
-                        <a href="./tasks.html">
-                            <img
-                                src="../scss\assets\image\list-check-solid.svg"
-                                class="menu__icon"
-                            />
-                            Tareas</a
-                        >
-                    </li>
-                    <li class="menu__option menu__option--disabled">
-                        <a href="#">
-                            <img
-                                src="../scss/assets/image/user-regular.svg"
-                                class="menu__icon"
-                            />
-                            Perfil</a
-                        >
-                    </li>
-                </ul>
-            </aside>
-            <div class="search_input_container">
-                <input
-                    type="search"
-                    class="search_input_container__search_input"
-                />
-                <div class="search_input__wrapper search_container">
-                    <svg
-                        class="search_container__icon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                    >
-                        <path
-                            d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6 .1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
-                        />
-                    </svg>
-                    <p class="search_container__text">Buscar Tarea</p>
-                </div>
+        <section class="calendar__container">
+            <div class="calendar__day calendar__day--active">
+                <span class="calendar__day-name">DOM</span>
+                <span class="calendar__day-number">15</span>
             </div>
-            <section class="calendar__container">
-                <div class="calendar__day calendar__day--active">
-                    <span class="calendar__day-name">DOM</span>
-                    <span class="calendar__day-number">15</span>
-                </div>
-                <div class="calendar__day">
-                    <span class="calendar__day-name">LUN</span>
-                    <span class="calendar__day-number">16</span>
-                </div>
-                <div class="calendar__day">
-                    <span class="calendar__day-name">MAR</span>
-                    <span class="calendar__day-number">17</span>
-                </div>
-                <div class="calendar__day">
-                    <span class="calendar__day-name">MIER</span>
-                    <span class="calendar__day-number">18</span>
-                </div>
-                <div class="calendar__day">
-                    <span class="calendar__day-name">JUEV</span>
-                    <span class="calendar__day-number">19</span>
-                </div>
-            </section>
+            <div class="calendar__day">
+                <span class="calendar__day-name">LUN</span>
+                <span class="calendar__day-number">16</span>
+            </div>
+            <div class="calendar__day">
+                <span class="calendar__day-name">MAR</span>
+                <span class="calendar__day-number">17</span>
+            </div>
+            <div class="calendar__day">
+                <span class="calendar__day-name">MIER</span>
+                <span class="calendar__day-number">18</span>
+            </div>
+            <div class="calendar__day">
+                <span class="calendar__day-name">JUEV</span>
+                <span class="calendar__day-number">19</span>
+            </div>
+        </section>
 
-            <div class="cards__container">
-                <div class="cards__container-heading">
-                    <h2>Tareas</h2>
-                    <div class="buttons__container">
-                        <div class="filter">
-                            <button class="button__show" id="button_filter">
-                                <i class="fa-solid fa-filter"></i>
-                            </button>
-                            <div class="filters-container">
-                                <div class="filter-category">
-                                    <button class="filter-title">
-                                        Categorias
-                                    </button>
-                                    <div class="filter-content show">
-                                        <label
-                                            ><input type="checkbox" />
-                                            Personal</label
-                                        >
-                                        <label
-                                            ><input type="checkbox" />
-                                            College</label
-                                        >
-                                        <label
-                                            ><input type="checkbox" /> Out of
-                                            stock</label
-                                        >
-                                    </div>
-                                </div>
-                                <div class="filter-category">
-                                    <button class="filter-title">
-                                        Estados
-                                    </button>
-                                    <div class="filter-content show">
-                                        <label
-                                            ><input type="checkbox" />
-                                            Completado</label
-                                        >
-                                        <label
-                                            ><input type="checkbox" />
-                                            Pendiente</label
-                                        >
-                                        <label
-                                            ><input type="checkbox" /> En
-                                            Progreso</label
-                                        >
-                                    </div>
+        <div class="cards__container">
+            <div class="cards__container-heading">
+                <h2>Tareas</h2>
+                <div class="buttons__container">
+                    <div class="filter">
+                        <button class="button__show" id="button_filter">
+                            <i class="fa-solid fa-filter"></i>
+                        </button>
+                        <div class="filters-container">
+                            <div class="filter-category">
+                                <button class="filter-title">Categorias</button>
+                                <div class="filter-content show">
+                                    <label><input type="checkbox" name="task-category"
+                                            value="personal" />Personal</label>
+                                    <label><input type="checkbox" name="task-category" value="work" />Trabajo</label>
+                                    <label><input type="checkbox" name="task-category"
+                                            value="studies" />Estudios</label>
+                                    <label><input type="checkbox" name="task-category"
+                                            value="community" />Comunidad</label>
+                                    <label><input type="checkbox" name="task-category" value="others" />Otros</label>
                                 </div>
                             </div>
-                        </div>
-                        <div class="order">
-                            <button class="button__show" id="button_orderby">
-                                <i class="fa-solid fa-arrow-down-z-a"></i>
-                            </button>
-                            <div class="orderby-container">
-                                <div class="order-category">
-                                    <button class="order-title">
-                                        Ordenar Por
-                                    </button>
-                                    <div class="order-content show">
-                                        <label
-                                            ><input
-                                                type="radio"
-                                                name="ordenar"
-                                            />
-                                            Más Reciente</label
-                                        >
-                                        <label
-                                            ><input
-                                                type="radio"
-                                                name="ordenar"
-                                            />
-                                            Más Antiguo</label
-                                        >
-                                        <label
-                                            ><input
-                                                type="radio"
-                                                name="ordenar"
-                                            />
-                                            Prioridad</label
-                                        >
-                                    </div>
+                            <div class="filter-status">
+                                <button class="filter-title">Estados</button>
+                                <div class="filter-content show">
+                                    <label><input type="checkbox" name="task-status"
+                                            value="completed" />Completado</label>
+                                    <label><input type="checkbox" name="task-status" value="pending" />Pendiente</label>
+                                    <label><input type="checkbox" name="task-status" value="in_progress" />
+                                        En Progreso</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card card__personal">
-                    <div class="card__body">
-                        <div class="card__details">
-                            <div class="card__tags">
-                                <div class="card__tag card__tag-pending">
-                                    Pendiente
+                    <div class="order">
+                        <button class="button__show" id="button_orderby">
+                            <i class="fa-solid fa-arrow-down-z-a"></i>
+                        </button>
+                        <div class="orderby-container">
+                            <div class="order-category">
+                                <button class="order-title">Ordenar Por</button>
+                                <div class="order-content show">
+                                    <label><input type="radio" name="ordenar" /> Más Reciente</label>
+                                    <label><input type="radio" name="ordenar" /> Más Antiguo</label>
+                                    <label><input type="radio" name="ordenar" /> Prioridad</label>
                                 </div>
                             </div>
-                            <p class="card__date">Lunes,12 de Junio 2025</p>
-                            <h2 class="card__title">Prueba de Titulo</h2>
-                        </div>
-                        <div class="card__buttons">
-                            <button class="button__task button__task-edit">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button class="button__task button__task-delete">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card card__others">
-                    <div class="card__body">
-                        <div class="card__details">
-                            <div class="card__tags">
-                                <div class="card__tag card__tag-inprogress">
-                                    En Progreso
-                                </div>
-                            </div>
-                            <p class="card__date">Lunes,12 de Junio 2025</p>
-                            <h2 class="card__title">Prueba de Titulo</h2>
-                        </div>
-                        <div class="card__buttons">
-                            <button class="button__task button__task-edit">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button class="button__task button__task-delete">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card card__college">
-                    <div class="card__body">
-                        <div class="card__details">
-                            <div class="card__tags">
-                                <div class="card__tag card__tag-complete">
-                                    Completado
-                                </div>
-                            </div>
-                            <p class="card__date">Lunes,12 de Junio 2025</p>
-                            <h2 class="card__title">Prueba de Titulo</h2>
-                        </div>
-                        <div class="card__buttons">
-                            <button class="button__task button__task-edit">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button class="button__task button__task-delete">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="button__createtask" id="btn_create_task">
-                +
-            </button>
-        </main>
-        <script
-            src="https://kit.fontawesome.com/b556484ff9.js"
-            crossorigin="anonymous"
-        ></script>
-        <script type="module" src="../js/index.js"></script>
-    </body>
+            <div id="cards__container-wrapper">
+                
+            </div>
+            <!-- <div class="card card__personal">
+                <div class="card__body">
+                    <div class="card__details">
+                        <div class="card__tags">
+                            <div class="card__tag card__tag-pending">Pendiente</div>
+                        </div>
+                        <p class="card__date">Lunes,12 de Junio 2025</p>
+                        <h2 class="card__title">Prueba de Titulo</h2>
+                    </div>
+                    <div class="card__buttons">
+                        <button class="button__task button__task-edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button class="button__task button__task-delete">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card card__others">
+                <div class="card__body">
+                    <div class="card__details">
+                        <div class="card__tags">
+                            <div class="card__tag card__tag-inprogress">En Progreso</div>
+                        </div>
+                        <p class="card__date">Lunes,12 de Junio 2025</p>
+                        <h2 class="card__title">Prueba de Titulo</h2>
+                    </div>
+                    <div class="card__buttons">
+                        <button class="button__task button__task-edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button class="button__task button__task-delete">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card card__college">
+                <div class="card__body">
+                    <div class="card__details">
+                        <div class="card__tags">
+                            <div class="card__tag card__tag-complete">Completado</div>
+                        </div>
+                        <p class="card__date">Lunes,12 de Junio 2025</p>
+                        <h2 class="card__title">Prueba de Titulo</h2>
+                    </div>
+                    <div class="card__buttons">
+                        <button class="button__task button__task-edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button class="button__task button__task-delete">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <button class="button__createtask" id="btn_create_task">+</button>
+    </main>
+    <script src="https://kit.fontawesome.com/b556484ff9.js" crossorigin="anonymous"></script>
+    <script type="module" src="../js/index.js"></script>
+</body>
+
 </html>

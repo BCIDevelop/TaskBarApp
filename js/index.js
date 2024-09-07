@@ -1,3 +1,6 @@
+import { filterTasks } from "../service/task.js";
+import { getSelectedFilters, renderTasks, showTasks } from "./task.js";
+
 document.addEventListener("DOMContentLoaded", function () {
     const taskOverlay = document.getElementById("create-task-overlay");
     const closeModalButton = document.getElementById("close-modal-task");
@@ -47,3 +50,18 @@ document.addEventListener("DOMContentLoaded", function () {
         taskOverlay.classList.remove("overlay-show");
     });
 });
+
+// FILTER TASK
+document
+  .querySelectorAll('input[name="task-category"], input[name="task-status"]')
+  .forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+        const filters = getSelectedFilters()
+        const userId = '2'
+        const data = filterTasks(userId, filters.status, filters.categories,  )
+        renderTasks(data)
+    });
+});
+
+// LOAD TASK 
+showTasks()
