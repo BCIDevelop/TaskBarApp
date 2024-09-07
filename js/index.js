@@ -1,4 +1,7 @@
 import { createTask } from "./createTask.js";
+import { filterTasks } from "../service/task.js";
+import { getSelectedFilters, renderTasks, showTasks } from "./task.js";
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const taskOverlay = document.getElementById("create-task-overlay");
@@ -50,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
 const buttoncreatetask = document.querySelector(".button__createtask");
 
 buttoncreatetask.addEventListener("click", function() {
@@ -60,3 +64,19 @@ buttoncreatetask.addEventListener("click", function() {
 function creatingTask() {
   document.querySelector(".btn-submit").addEventListener("submit", createTask());
 }
+
+// FILTER TASK
+document
+  .querySelectorAll('input[name="task-category"], input[name="task-status"]')
+  .forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+        const filters = getSelectedFilters()
+        const userId = '2'
+        const data = filterTasks(userId, filters.status, filters.categories,  )
+        renderTasks(data)
+    });
+});
+
+// LOAD TASK 
+showTasks()
+
