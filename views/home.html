@@ -15,16 +15,13 @@
     <body>
         <header class="header">
             <h1 class="header__logo">TaskApp</h1>
-            <button class="button__show" onclick="showNavBar()">
+            <button class="button__show" id="btn_show-nav">
                 <i class="fa-solid fa-bars bars__picture"></i>
             </button>
         </header>
 
-        <div class="overlay" id="nav-overlay" onclick="closeNavBar()"></div>
-        <div
-            class="overlay"
-            id="create-task-overlay"
-        >
+        <div class="overlay" id="nav-overlay"></div>
+        <div class="overlay" id="create-task-overlay">
             <div class="create-task">
                 <button
                     id="close-modal-task"
@@ -120,10 +117,7 @@
         </div>
         <main>
             <aside class="menu" id="navbar">
-                <button
-                    onclick="closeNavBar()"
-                    class="close_modal button__close"
-                >
+                <button id="btn_close_nav" class="close_modal button__close">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
                 <div class="user">
@@ -231,14 +225,12 @@
                     </a>
                 </div>
             </div>
-            <button class="button__createtask" onclick="showCreateTask()">
-                +
-            </button>
+            <button class="button__createtask" id="btn_create_task">+</button>
         </main>
         <script
             src="https://kit.fontawesome.com/b556484ff9.js"
             crossorigin="anonymous"
         ></script>
-        <script src="../js/index.js"></script>
+        <script type="module" src="../js/index.js"></script>
     </body>
 </html>

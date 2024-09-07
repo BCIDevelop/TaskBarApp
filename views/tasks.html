@@ -15,12 +15,12 @@
     <body>
         <header class="header">
             <h1 class="header__logo">TaskApp</h1>
-            <button class="button__show" onclick="showNavBar()">
+            <button class="button__show" id="btn_show-nav">
                 <i class="fa-solid fa-bars bars__picture"></i>
             </button>
         </header>
 
-        <div class="overlay" id="nav-overlay" onclick="closeNavBar()"></div>
+        <div class="overlay" id="nav-overlay"></div>
         <div class="overlay" id="create-task-overlay">
             <div class="create-task">
                 <button
@@ -118,7 +118,7 @@
         <main>
             <aside class="menu" id="navbar">
                 <button
-                    onclick="closeNavBar()"
+                    id="btn_close_nav"
                     class="close_modal button__close"
                 >
                     <i class="fa-solid fa-xmark"></i>
@@ -217,7 +217,7 @@
                     <h2>Tareas</h2>
                     <div class="buttons__container">
                         <div class="filter">
-                            <button class="button__show" onclick="showFilter()">
+                            <button class="button__show" id="button_filter">
                                 <i class="fa-solid fa-filter"></i>
                             </button>
                             <div class="filters-container">
@@ -262,10 +262,7 @@
                             </div>
                         </div>
                         <div class="order">
-                            <button
-                                class="button__show"
-                                onclick="showOrderBy()"
-                            >
+                            <button class="button__show" id="button_orderby">
                                 <i class="fa-solid fa-arrow-down-z-a"></i>
                             </button>
                             <div class="orderby-container">
@@ -275,15 +272,24 @@
                                     </button>
                                     <div class="order-content show">
                                         <label
-                                            ><input type="checkbox" /> Más
-                                            Reciente</label
+                                            ><input
+                                                type="radio"
+                                                name="ordenar"
+                                            />
+                                            Más Reciente</label
                                         >
                                         <label
-                                            ><input type="checkbox" /> Más
-                                            Antiguo</label
+                                            ><input
+                                                type="radio"
+                                                name="ordenar"
+                                            />
+                                            Más Antiguo</label
                                         >
                                         <label
-                                            ><input type="checkbox" />
+                                            ><input
+                                                type="radio"
+                                                name="ordenar"
+                                            />
                                             Prioridad</label
                                         >
                                     </div>
@@ -356,7 +362,7 @@
                     </div>
                 </div>
             </div>
-            <button class="button__createtask" onclick="showCreateTask()">
+            <button class="button__createtask" id="btn_create_task">
                 +
             </button>
         </main>
@@ -364,6 +370,6 @@
             src="https://kit.fontawesome.com/b556484ff9.js"
             crossorigin="anonymous"
         ></script>
-        <script src="../js/index.js"></script>
+        <script type="module" src="../js/index.js"></script>
     </body>
 </html>
