@@ -681,7 +681,9 @@ html {
 
 .overlay-show {
   opacity: 100%;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .user-lists {
@@ -1053,6 +1055,7 @@ html {
   border: 1px solid #bec0c7;
   border-radius: 5px;
   font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .create-task__field input:focus, .create-task__field textarea:focus {
   border-color: #ff8142;
