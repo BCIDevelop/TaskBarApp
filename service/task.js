@@ -2,9 +2,10 @@ import { getSingleObject } from "../storage/localStorage.js";
 import formatDate from "../utils/formatDate.js";
 
 export const filterTasksByDate = function (userId, dayClicked) {
+    console.log(dayClicked)
     /* Obtenemos el dia con el formato adecuado*/
     const actualDate = new Date();
-    actualDate.setDate(actualDate.getDate() + dayClicked + 30);
+    actualDate.setDate(actualDate.getDate() + dayClicked );
     /* Formateamos la data */
     const formatedDate = formatDate(actualDate);
     console.log(formatedDate);
@@ -12,7 +13,7 @@ export const filterTasksByDate = function (userId, dayClicked) {
     const tasks = getSingleObject("tasks");
     const taskFiltered = tasks.filter(
         (element) =>
-            element.startDate === formatedDate && element.ownerId === userId
+            element.startDate === formatedDate && element.ownerId == userId
     );
     return taskFiltered;
 };

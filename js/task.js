@@ -1,5 +1,5 @@
 import { Task } from "../model/task.js";
-import { filterTasks } from "../service/task.js";
+import { filterTasks, filterTasksByDate, listTasks } from "../service/task.js";
 import { saveSingleObject, getSingleObject } from "../storage/localStorage.js";
 import formatDate, { formatDateToString } from "../utils/formatDate.js";
 import { showModalDelete, showModalTask } from "./index.js";
@@ -297,3 +297,39 @@ submitDelete?.addEventListener("click", (event) => {
     }
     renderTasks(getSingleObject("tasks"));
 });
+
+/* Search Input */
+const searchInput = document.querySelector('.search_input_container__search_input')
+searchInput.addEventListener("input",event=>{
+    const searchedTasks = listTasks(2,{title: event.target.value}) // TODO: CHANGE USER ID FOR USER IN LOCAL STORAGE
+    renderTasks(searchedTasks);
+
+})
+
+/* Calendar Section */
+const datesElements = document.querySelectorAll('.calendar__day')
+const handleCalendarClicked= function(event){
+    console.log('clciekd')
+    let filteredTaskCalendar =getSingleObject("tasks")
+    let positionDate
+    event.currentTarget.classList.toggle('calendar__day--active')
+    datesElements.forEach((element,index)=>{
+        if (element === event.currentTarget) positionDate = index
+        else element.classList.remove('calendar__day--active')  
+    })
+    if(event.currentTarget.classList.contains('calendar__day--active')) { 
+        filteredTaskCalendar=filterTasksByDate(2,positionDate)//TODO: CHANGE USER ID
+    }
+    renderTasks(filteredTaskCalendar);
+}
+const dayMap = {0:"DOM",1:"LUN",2:"MAR", 3: "MIER",4:"JUEV",5:"VIER",6:"SAB"}
+datesElements.forEach((element,index)=>{
+    element.addEventListener('click',handleCalendarClicked)
+    const month = element.querySelector('.calendar__day-name')
+    const number = element.querySelector('.calendar__day-number')
+    const actualDate = new Date()
+    actualDate.setDate(actualDate.getDate() + index )
+    month.textContent= dayMap[actualDate.getDay()]
+    number.textContent = actualDate.getDate()
+
+})
