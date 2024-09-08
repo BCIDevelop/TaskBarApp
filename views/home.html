@@ -15,100 +15,131 @@
     <body>
         <header class="header">
             <h1 class="header__logo">TaskApp</h1>
-            <button class="button__show" onclick="showNavBar()">
+            <button class="button__show" id="btn_show-nav">
                 <i class="fa-solid fa-bars bars__picture"></i>
             </button>
         </header>
 
-        <div class="overlay" id="nav-overlay" onclick="closeNavBar()"></div>
-        <div
-            class="overlay"
-            id="create-task-overlay"
-            onclick="closeCreateTask()"
-        >
-            <div class="create-task">
-                <button class="close_modal button__task button__task-close">
+        <div class="overlay" id="nav-overlay"></div>
+        <div class="overlay" id="create-task-overlay">
+            <div class="modal-task">
+                <button
+                    id="close-modal-task"
+                    class="close_modal button__task button__task-close"
+                >
                     <i class="fa-solid fa-xmark"></i>
                 </button>
-                <h2 class="create-task__title">Crear Nueva Tarea</h2>
-                <form class="create-task__form">
-                    <div class="create-task__field">
-                        <label class="create-task__label" for="title"
+                <h2 class="modal-task__title">Crear Nueva Tarea</h2>
+                <form class="modal-task__form">
+                    <input id="id_task" type="hidden" value="" />
+                    <div class="modal-task__field">
+                        <label class="modal-task__label" for="title"
                             >Título</label
                         >
                         <input
                             type="text"
                             id="title"
-                            class="create-task__input"
+                            class="modal-task__input"
                             aria-label="title"
                             placeholder=""
                         />
                     </div>
-                    <div class="create-task__field">
-                        <label class="create-task__label" for="description"
+                    <div class="modal-task__field">
+                        <label class="modal-task__label" for="description"
                             >Descripción</label
                         >
                         <textarea
                             name="description"
                             id="description"
-                            class="create-task__textarea"
+                            class="modal-task__textarea"
                             aria-expanded="false"
                             rows="4"
                         ></textarea>
                     </div>
-                    <div class="create-task__options">
-                        <div class="create-task__option">
-                            <i
-                                class="fa-solid fa-tag create-task__option-icon"
-                            ></i>
-                            <p class="create-task__option-label">Categoría</p>
-                            <button class="button__task button__task-add">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
+                    <div class="modal-task__options">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label"
+                                ><i
+                                    class="fa-solid fa-tag modal-task__option-icon"
+                                ></i>
+
+                                Categoría</label
+                            >
+                            <select
+                                class="modal-task__option-input"
+                                name="categoria"
+                                id="categoria"
+                            >
+                                <option value="personal">Personal</option>
+                                <option value="work">Trabajo</option>
+                                <option value="studies">Estudios</option>
+                                <option value="community">Comunidad</option>
+                                <option value="others">Otros</option>
+                            </select>
                         </div>
-                        <div class="create-task__option">
-                            <i
-                                class="fa-solid fa-square-poll-vertical create-task__option-icon"
-                            ></i>
-                            <p class="create-task__option-label">Estado</p>
-                            <button class="button__task button__task-add">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label">
+                                <i
+                                    class="fa-solid fa-square-poll-vertical modal-task__option-icon"
+                                ></i>
+                                Estado</label
+                            >
+                            <select
+                                class="modal-task__option-input"
+                                name="estado"
+                                id="estado"
+                            >
+                                <option value="pending">Pendiente</option>
+                                <option value="in_progress">En Progreso</option>
+                                <option value="completed">Completado</option>
+                            </select>
                         </div>
-                        <div class="create-task__option">
-                            <i
-                                class="fa-solid fa-calendar-days create-task__option-icon"
-                            ></i>
-                            <p class="create-task__option-label">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label">
+                                <i
+                                    class="fa-solid fa-calendar-days modal-task__option-icon"
+                                ></i>
                                 Fecha Inicio
-                            </p>
-                            <button class="button__task button__task-add">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
+                            </label>
+                            <input
+                                class="modal-task__option-input"
+                                type="date"
+                                id="fechainicio"
+                                aria-label="Fecha Inicio"
+                            />
                         </div>
-                        <div class="create-task__option">
-                            <i
-                                class="fa-solid fa-calendar-days create-task__option-icon"
-                            ></i>
-                            <p class="create-task__option-label">Fecha Fin</p>
-                            <button class="button__task button__task-add">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label">
+                                <i
+                                    class="fa-solid fa-calendar-days modal-task__option-icon"
+                                ></i>
+                                Fecha Fin</label
+                            >
+                            <input
+                                class="modal-task__option-input"
+                                type="date"
+                                id="fechafin"
+                                aria-label="Fecha Fin"
+                            />
                         </div>
-                        <div class="create-task__option">
-                            <i
-                                class="fa-solid fa-user create-task__option-icon"
-                            ></i>
-                            <p class="create-task__option-label">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label">
+                                <i
+                                    class="fa-solid fa-user modal-task__option-icon"
+                                ></i>
                                 Responsables
-                            </p>
-                            <button class="button__task button__task-add">
+                            </label>
+                            <button
+                                type="button"
+                                class="button__task button__task-add"
+                            >
                                 <i class="fa-solid fa-plus"></i>
                             </button>
                         </div>
                     </div>
                     <input
                         type="submit"
+                        id="modal-submit"
                         class="btn-submit"
                         value="Registrar"
                         aria-label="Registrar"
@@ -116,12 +147,11 @@
                 </form>
             </div>
         </div>
+
+        
         <main>
             <aside class="menu" id="navbar">
-                <button
-                    onclick="closeNavBar()"
-                    class="close_modal button__close"
-                >
+                <button id="btn_close_nav" class="close_modal button__close">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
                 <div class="user">
@@ -229,14 +259,12 @@
                     </a>
                 </div>
             </div>
-            <button class="button__createtask" onclick="showCreateTask()">
-                +
-            </button>    
+            <button class="button__createtask" id="btn_create_task">+</button>
         </main>
         <script
             src="https://kit.fontawesome.com/b556484ff9.js"
             crossorigin="anonymous"
         ></script>
-        <script src="../js/index.js"></script>
+        <script type="module" src="../js/index.js"></script>
     </body>
 </html>

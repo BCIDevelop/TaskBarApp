@@ -16,6 +16,7 @@
   flex-direction: column;
   padding: 20px;
   gap: 20px;
+  padding: 30px 20px 65px;
 }
 .cards__container-heading {
   display: flex;
@@ -23,6 +24,12 @@
 }
 .cards__container-heading h2 {
   margin: 0;
+}
+
+#cards__container-wrapper {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
 }
 
 .card {
@@ -51,17 +58,37 @@
   display: inline-block;
   border-radius: 5px;
 }
-.card__tag-pending {
+.card__tag-status--pending {
   background-color: rgba(249, 126, 110, 0.5764705882);
   color: #f03f28;
 }
-.card__tag-inprogress {
+.card__tag-status--in_progress {
   background-color: rgba(242, 161, 61, 0.4509803922);
   color: #cc6627;
 }
-.card__tag-complete {
-  background-color: rgba(56, 189, 242, 0.4745098039);
-  color: #08a0f7;
+.card__tag-status--completed {
+  background-color: #9ab2ee;
+  color: #0521D8;
+}
+.card__tag-category--personal {
+  background-color: #40a35e;
+  color: #ffffff;
+}
+.card__tag-category--work {
+  background-color: #7789f2;
+  color: #ffffff;
+}
+.card__tag-category--studies {
+  background-color: #38bdf2;
+  color: #ffffff;
+}
+.card__tag-category--community {
+  background-color: #f26680;
+  color: #ffffff;
+}
+.card__tag-category--others {
+  background-color: #f2a03d;
+  color: #ffffff;
 }
 .card__date {
   margin: 0;
@@ -71,11 +98,17 @@
 .card__personal {
   border-color: #40a35e;
 }
-.card__college {
+.card__work {
+  border-color: #7789f2;
+}
+.card__studies {
+  border-color: #38bdf2;
+}
+.card__community {
   border-color: #f26680;
 }
 .card__others {
-  border-color: #7789f2;
+  border-color: #f2a03d;
 }
 .card__buttons {
   display: flex;
@@ -576,7 +609,7 @@ html {
   position: absolute;
   top: 0;
   right: -334px;
-  z-index: 5;
+  z-index: 15;
   transition: all 0.5s ease-out;
 }
 
@@ -681,7 +714,9 @@ html {
 
 .overlay-show {
   opacity: 100%;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .user-lists {
@@ -859,17 +894,23 @@ html {
   right: -15px;
 }
 .filters-container .filter-category,
+.filters-container .filter-status,
 .filters-container .order-category,
 .orderby-container .filter-category,
+.orderby-container .filter-status,
 .orderby-container .order-category {
   margin-bottom: 15px;
 }
 .filters-container .filter-category .filter-title,
 .filters-container .filter-category .order-title,
+.filters-container .filter-status .filter-title,
+.filters-container .filter-status .order-title,
 .filters-container .order-category .filter-title,
 .filters-container .order-category .order-title,
 .orderby-container .filter-category .filter-title,
 .orderby-container .filter-category .order-title,
+.orderby-container .filter-status .filter-title,
+.orderby-container .filter-status .order-title,
 .orderby-container .order-category .filter-title,
 .orderby-container .order-category .order-title {
   background: none;
@@ -884,10 +925,14 @@ html {
 }
 .filters-container .filter-category .filter-content,
 .filters-container .filter-category .order-content,
+.filters-container .filter-status .filter-content,
+.filters-container .filter-status .order-content,
 .filters-container .order-category .filter-content,
 .filters-container .order-category .order-content,
 .orderby-container .filter-category .filter-content,
 .orderby-container .filter-category .order-content,
+.orderby-container .filter-status .filter-content,
+.orderby-container .filter-status .order-content,
 .orderby-container .order-category .filter-content,
 .orderby-container .order-category .order-content {
   display: none;
@@ -895,23 +940,32 @@ html {
 }
 .filters-container .filter-category .filter-content.show,
 .filters-container .filter-category .order-content.show,
+.filters-container .filter-status .filter-content.show,
+.filters-container .filter-status .order-content.show,
 .filters-container .order-category .filter-content.show,
 .filters-container .order-category .order-content.show,
 .orderby-container .filter-category .filter-content.show,
 .orderby-container .filter-category .order-content.show,
+.orderby-container .filter-status .filter-content.show,
+.orderby-container .filter-status .order-content.show,
 .orderby-container .order-category .filter-content.show,
 .orderby-container .order-category .order-content.show {
   display: block;
 }
 .filters-container .filter-category .filter-content label,
 .filters-container .filter-category .order-content label,
+.filters-container .filter-status .filter-content label,
+.filters-container .filter-status .order-content label,
 .filters-container .order-category .filter-content label,
 .filters-container .order-category .order-content label,
 .orderby-container .filter-category .filter-content label,
 .orderby-container .filter-category .order-content label,
+.orderby-container .filter-status .filter-content label,
+.orderby-container .filter-status .order-content label,
 .orderby-container .order-category .filter-content label,
 .orderby-container .order-category .order-content label {
-  display: block;
+  display: flex;
+  gap: 6px;
   margin-bottom: 10px;
   font-size: 14px;
 }
@@ -1012,7 +1066,7 @@ html {
   color: #3498db;
 }
 
-.create-task {
+.modal-task {
   background-color: #ffffff;
   padding: 1.5rem;
   border-radius: 8px;
@@ -1022,62 +1076,120 @@ html {
   position: relative;
   margin: 20px auto;
 }
-.create-task .close_modal {
+.modal-task .close_modal {
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 1.2rem;
 }
-.create-task__title {
+.modal-task__buttons {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+.modal-task .btn-cancelar {
+  background-color: #5ebff6;
+}
+.modal-task .btn-cancelar:hover {
+  background-color: #08a0f7;
+}
+.modal-task .btn-submit {
+  background-color: #ff8142;
+}
+.modal-task .btn-submit:hover {
+  background-color: #cc6627;
+}
+.modal-task .btn-cancelar, .modal-task .btn-submit {
+  color: black;
+  font-size: 15px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.modal-task__title {
   font-size: 1.5rem;
   color: #333;
   margin-bottom: 1rem;
+  text-align: center;
 }
-.create-task__form {
+.modal-task__quest {
+  text-align: center;
+}
+.modal-task__form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.create-task__field {
+.modal-task__field {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.create-task__field label {
+.modal-task__field label {
   font-size: 0.9rem;
   color: #333;
+  position: static;
 }
-.create-task__field input, .create-task__field textarea {
+.modal-task__field input, .modal-task__field textarea {
   padding: 0.5rem;
   border: 1px solid #bec0c7;
   border-radius: 5px;
   font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.create-task__field input:focus, .create-task__field textarea:focus {
+.modal-task__field input:focus, .modal-task__field textarea:focus {
   border-color: #ff8142;
   outline: none;
 }
-.create-task__options {
+.modal-task__options {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.create-task__option {
+.modal-task__option {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.4rem;
 }
-.create-task__option-label {
+@media only screen and (min-width: 28rem) {
+  .modal-task__option {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.modal-task__option-label {
   margin-left: 0.5rem;
   color: #333;
   font-size: 1rem;
+  text-align: start;
 }
-.create-task__option-icon {
+.modal-task__option-input {
+  width: 100%;
+  max-width: 200px;
+  outline: none;
+  padding: 5px;
+  border: 1px solid #bec0c7;
+}
+@media only screen and (min-width: 48rem) {
+  .modal-task__option-input {
+    max-width: 220px;
+  }
+}
+.modal-task__option-input:focus {
+  border-color: #ff8142;
+}
+.modal-task__option-icon {
   font-size: 1.5rem;
   color: #333;
 }
-.create-task__submit {
+.modal-task__submit {
   width: 100%;
 }
 
@@ -1230,7 +1342,7 @@ html {
 
 /* Wrapper Container input */
 /* Texto del input */
-label {
+.input-container label {
   position: absolute;
   left: 5%;
   font-size: 16px;
