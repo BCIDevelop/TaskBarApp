@@ -28,7 +28,6 @@ export const listTasks = function (userId,options){
                 return pattern.test(element.title)
             }
             if (element[key] !== options[key]) {
-
                 elementFinded = false;
                 break;
             }
