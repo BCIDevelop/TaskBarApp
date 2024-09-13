@@ -7,7 +7,8 @@ const fechafin = document.getElementById("fechafin");
 const submitbutton = document.querySelector(".btn-submit");
 
 class Task {
-  constructor(title, description, categoria, estado, fechainicio, fechafin) {
+  constructor(id, title, description, categoria, estado, fechainicio, fechafin) {
+    this.id = id;
     this.title = title;
     this.description = description;
     this.categoria = categoria;
@@ -18,13 +19,14 @@ class Task {
 }
 
 export const createTask = () => {
+  let taskId = crypto.randomUUID();
   let titlevalue = title.value;
   let descriptionvalue = description.value;
   let categoriavalue = categoria.value;
   let estadovalue = estado.value;
   let fechainiciovalue = fechainicio.value;
   let fechafinvalue = fechafin.value;
-  let newTask = new Task(titlevalue, descriptionvalue, categoriavalue, estadovalue, fechainiciovalue, fechafinvalue);
+  let newTask = new Task(taskId, titlevalue, descriptionvalue, categoriavalue, estadovalue, fechainiciovalue, fechafinvalue);
 
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
