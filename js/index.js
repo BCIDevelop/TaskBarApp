@@ -1,6 +1,9 @@
 import { clearInputs,clearIdDelete } from "./task.js";
 import { filterTasks } from "../service/task.js";
 import { getSelectedFilters, renderTasks, showTasks } from "./task.js";
+import { getSingleObject } from "../storage/localStorage.js";
+
+const currentUser = getSingleObject('user') 
 
 export function showModalTask() {
     const taskOverlay = document.getElementById("create-task-overlay");
@@ -92,7 +95,7 @@ document
     .forEach((checkbox) => {
         checkbox.addEventListener("change", function () {
             const filters = getSelectedFilters();
-            const userId = "2";
+            const userId = currentUser.user_id;
             const data = filterTasks(
                 userId,
                 filters.status,
@@ -103,4 +106,4 @@ document
     });
 
 // LOAD TASK
-showTasks();
+showTasks(currentUser.user_id);

@@ -146,43 +146,8 @@ contentCard?.addEventListener("click", (event) => {
     }
 });
 
-export function showTasks() {
-    // Solo para pruebas , se eliminara cuando se integre creacion de tarea
-    const tasks = [
-        new Task({
-            ownerId: "2",
-            title: "Tarea 1",
-            description: "Desc 1",
-            status: "pending",
-            category: "personal",
-            startDate: formatDate(new Date()),
-            endDate: formatDate(new Date()),
-            participants: ["1"],
-        }),
-        new Task({
-            ownerId: "2",
-            title: "Tarea 2",
-            description: "Desc 2",
-            status: "completed",
-            category: "work",
-            startDate: formatDate(new Date()),
-            endDate: formatDate(new Date()),
-            participants: ["3", "2"],
-        }),
-        new Task({
-            ownerId: "2",
-            title: "Tarea 3",
-            description: "Desc 3",
-            status: "in_progress",
-            category: "studies",
-            startDate: formatDate(new Date()),
-            endDate: formatDate(new Date()),
-            participants: ["2"],
-        }),
-    ];
-    saveSingleObject("tasks", tasks);
-    //
-    const data = filterTasks("2");
+export function showTasks(userId) {
+    const data = filterTasks(userId);
     renderTasks(data);
 }
 
