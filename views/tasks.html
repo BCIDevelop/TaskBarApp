@@ -12,6 +12,7 @@
             rel="stylesheet"
         />
     </head>
+
     <body>
         <header class="header">
             <h1 class="header__logo">TaskApp</h1>
@@ -22,108 +23,110 @@
 
         <div class="overlay" id="nav-overlay"></div>
         <div class="overlay" id="create-task-overlay">
-            <div class="create-task">
+            <div class="modal-task">
                 <button
                     id="close-modal-task"
                     class="close_modal button__task button__task-close"
                 >
                     <i class="fa-solid fa-xmark"></i>
                 </button>
-                <h2 class="create-task__title">Crear Nueva Tarea</h2>
-                <form class="create-task__form">
-                    <div class="create-task__field">
-                        <label class="create-task__label" for="title"
+                <h2 class="modal-task__title">Crear Nueva Tarea</h2>
+                <form class="modal-task__form">
+                    <input id="id_task" type="hidden" value="" />
+                    <div class="modal-task__field">
+                        <label class="modal-task__label" for="title"
                             >Título</label
                         >
                         <input
                             type="text"
                             id="title"
-                            class="create-task__input"
+                            class="modal-task__input"
                             aria-label="title"
                             placeholder=""
                         />
                     </div>
-                    <div class="create-task__field">
-                        <label class="create-task__label" for="description"
+                    <div class="modal-task__field">
+                        <label class="modal-task__label" for="description"
                             >Descripción</label
                         >
                         <textarea
                             name="description"
                             id="description"
-                            class="create-task__textarea"
+                            class="modal-task__textarea"
                             aria-expanded="false"
                             rows="4"
                         ></textarea>
                     </div>
-                    <div class="create-task__options">
-                        <div class="create-task__option">
-                            <label class="create-task__option-label"
+                    <div class="modal-task__options">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label"
                                 ><i
-                                    class="fa-solid fa-tag create-task__option-icon"
+                                    class="fa-solid fa-tag modal-task__option-icon"
                                 ></i>
 
                                 Categoría</label
                             >
                             <select
-                                class="create-task__option-input"
+                                class="modal-task__option-input"
                                 name="categoria"
                                 id="categoria"
                             >
                                 <option value="personal">Personal</option>
-                                <option value="negocios">Negocios</option>
-                                <option value="comunidad">Comunidad</option>
-                                <option value="estudios">Estudios</option>
+                                <option value="work">Trabajo</option>
+                                <option value="studies">Estudios</option>
+                                <option value="community">Comunidad</option>
+                                <option value="others">Otros</option>
                             </select>
                         </div>
-                        <div class="create-task__option">
-                            <label class="create-task__option-label">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label">
                                 <i
-                                    class="fa-solid fa-square-poll-vertical create-task__option-icon"
+                                    class="fa-solid fa-square-poll-vertical modal-task__option-icon"
                                 ></i>
                                 Estado</label
                             >
                             <select
-                                class="create-task__option-input"
+                                class="modal-task__option-input"
                                 name="estado"
                                 id="estado"
                             >
-                                <option value="pendiente">Pendiente</option>
-                                <option value="enprogreso">En Progreso</option>
-                                <option value="completado">Completado</option>
+                                <option value="pending">Pendiente</option>
+                                <option value="in_progress">En Progreso</option>
+                                <option value="completed">Completado</option>
                             </select>
                         </div>
-                        <div class="create-task__option">
-                            <label class="create-task__option-label">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label">
                                 <i
-                                    class="fa-solid fa-calendar-days create-task__option-icon"
+                                    class="fa-solid fa-calendar-days modal-task__option-icon"
                                 ></i>
                                 Fecha Inicio
                             </label>
                             <input
-                                class="create-task__option-input"
+                                class="modal-task__option-input"
                                 type="date"
                                 id="fechainicio"
                                 aria-label="Fecha Inicio"
                             />
                         </div>
-                        <div class="create-task__option">
-                            <label class="create-task__option-label">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label">
                                 <i
-                                    class="fa-solid fa-calendar-days create-task__option-icon"
+                                    class="fa-solid fa-calendar-days modal-task__option-icon"
                                 ></i>
                                 Fecha Fin</label
                             >
                             <input
-                                class="create-task__option-input"
+                                class="modal-task__option-input"
                                 type="date"
                                 id="fechafin"
                                 aria-label="Fecha Fin"
                             />
                         </div>
-                        <div class="create-task__option">
-                            <label class="create-task__option-label">
+                        <div class="modal-task__option">
+                            <label class="modal-task__option-label">
                                 <i
-                                    class="fa-solid fa-user create-task__option-icon"
+                                    class="fa-solid fa-user modal-task__option-icon"
                                 ></i>
                                 Responsables
                             </label>
@@ -138,18 +141,48 @@
                     <input
                         type="submit"
                         class="btn-submit"
+                        id="modal-submit"
                         value="Registrar"
                         aria-label="Registrar"
                     />
                 </form>
             </div>
         </div>
+
+        <div class="overlay" id="delete-task-overlay">
+            <div class="modal-task">
+                <button
+                    id="close-modal-delete"
+                    class="close_modal button__task button__task-close"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h2 class="modal-task__title">Eliminar Tarea</h2>
+                <form class="modal-task__form">
+                    <input id="id_task_delete" type="hidden" value="" />
+                    <label class="modal-task__quest">
+                        ¿ Estas seguro de eliminar esta tarea ?
+                    </label>
+                    <div class="modal-task__buttons">
+                        <input
+                            id="cancel-modal-delete"
+                            type="button"
+                            class="btn-cancelar"
+                            value="Cancelar"
+                        />
+                        <input
+                            type="submit"
+                            id="delete-task-button"
+                            class="btn-submit"
+                            value="Eliminar"
+                        />
+                    </div>
+                </form>
+            </div>
+        </div>
         <main>
             <aside class="menu" id="navbar">
-                <button
-                    id="btn_close_nav"
-                    class="close_modal button__close"
-                >
+                <button id="btn_close_nav" class="close_modal button__close">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
                 <div class="user">
@@ -256,35 +289,68 @@
                                     </button>
                                     <div class="filter-content show">
                                         <label
-                                            ><input type="checkbox" />
-                                            Personal</label
+                                            ><input
+                                                type="checkbox"
+                                                name="task-category"
+                                                value="personal"
+                                            />Personal</label
                                         >
                                         <label
-                                            ><input type="checkbox" />
-                                            College</label
+                                            ><input
+                                                type="checkbox"
+                                                name="task-category"
+                                                value="work"
+                                            />Trabajo</label
                                         >
                                         <label
-                                            ><input type="checkbox" /> Out of
-                                            stock</label
+                                            ><input
+                                                type="checkbox"
+                                                name="task-category"
+                                                value="studies"
+                                            />Estudios</label
+                                        >
+                                        <label
+                                            ><input
+                                                type="checkbox"
+                                                name="task-category"
+                                                value="community"
+                                            />Comunidad</label
+                                        >
+                                        <label
+                                            ><input
+                                                type="checkbox"
+                                                name="task-category"
+                                                value="others"
+                                            />Otros</label
                                         >
                                     </div>
                                 </div>
-                                <div class="filter-category">
+                                <div class="filter-status">
                                     <button class="filter-title">
                                         Estados
                                     </button>
                                     <div class="filter-content show">
                                         <label
-                                            ><input type="checkbox" />
-                                            Completado</label
+                                            ><input
+                                                type="checkbox"
+                                                name="task-status"
+                                                value="completed"
+                                            />Completado</label
                                         >
                                         <label
-                                            ><input type="checkbox" />
-                                            Pendiente</label
+                                            ><input
+                                                type="checkbox"
+                                                name="task-status"
+                                                value="pending"
+                                            />Pendiente</label
                                         >
                                         <label
-                                            ><input type="checkbox" /> En
-                                            Progreso</label
+                                            ><input
+                                                type="checkbox"
+                                                name="task-status"
+                                                value="in_progress"
+                                            />
+                                            En Progreso</label
                                         >
                                     </div>
                                 </div>
@@ -327,73 +393,66 @@
                         </div>
                     </div>
                 </div>
-                <div class="card card__personal">
-                    <div class="card__body">
-                        <div class="card__details">
-                            <div class="card__tags">
-                                <div class="card__tag card__tag-pending">
-                                    Pendiente
-                                </div>
-                            </div>
-                            <p class="card__date">Lunes,12 de Junio 2025</p>
-                            <h2 class="card__title">Prueba de Titulo</h2>
+                <div id="cards__container-wrapper"></div>
+                <!-- <div class="card card__personal">
+                <div class="card__body">
+                    <div class="card__details">
+                        <div class="card__tags">
+                            <div class="card__tag card__tag-pending">Pendiente</div>
                         </div>
-                        <div class="card__buttons">
-                            <button class="button__task button__task-edit">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button class="button__task button__task-delete">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
+                        <p class="card__date">Lunes,12 de Junio 2025</p>
+                        <h2 class="card__title">Prueba de Titulo</h2>
                     </div>
-                </div>
-                <div class="card card__others">
-                    <div class="card__body">
-                        <div class="card__details">
-                            <div class="card__tags">
-                                <div class="card__tag card__tag-inprogress">
-                                    En Progreso
-                                </div>
-                            </div>
-                            <p class="card__date">Lunes,12 de Junio 2025</p>
-                            <h2 class="card__title">Prueba de Titulo</h2>
-                        </div>
-                        <div class="card__buttons">
-                            <button class="button__task button__task-edit">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button class="button__task button__task-delete">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card card__college">
-                    <div class="card__body">
-                        <div class="card__details">
-                            <div class="card__tags">
-                                <div class="card__tag card__tag-complete">
-                                    Completado
-                                </div>
-                            </div>
-                            <p class="card__date">Lunes,12 de Junio 2025</p>
-                            <h2 class="card__title">Prueba de Titulo</h2>
-                        </div>
-                        <div class="card__buttons">
-                            <button class="button__task button__task-edit">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button class="button__task button__task-delete">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
+                    <div class="card__buttons">
+                        <button class="button__task button__task-edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button class="button__task button__task-delete">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-            <button class="button__createtask" id="btn_create_task">
-                +
-            </button>
+            <div class="card card__others">
+                <div class="card__body">
+                    <div class="card__details">
+                        <div class="card__tags">
+                            <div class="card__tag card__tag-inprogress">En Progreso</div>
+                        </div>
+                        <p class="card__date">Lunes,12 de Junio 2025</p>
+                        <h2 class="card__title">Prueba de Titulo</h2>
+                    </div>
+                    <div class="card__buttons">
+                        <button class="button__task button__task-edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button class="button__task button__task-delete">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card card__college">
+                <div class="card__body">
+                    <div class="card__details">
+                        <div class="card__tags">
+                            <div class="card__tag card__tag-complete">Completado</div>
+                        </div>
+                        <p class="card__date">Lunes,12 de Junio 2025</p>
+                        <h2 class="card__title">Prueba de Titulo</h2>
+                    </div>
+                    <div class="card__buttons">
+                        <button class="button__task button__task-edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button class="button__task button__task-delete">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+            </div>
+            <button class="button__createtask" id="btn_create_task">+</button>
         </main>
         <script
             src="https://kit.fontawesome.com/b556484ff9.js"
